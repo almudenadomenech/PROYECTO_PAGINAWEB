@@ -31,6 +31,48 @@
 
 </section>
 
+<!-- seccion home  -->
+ <section class="home">
+
+ <div class="swiper home-slider">
+
+    <div class="swiper-wrapper">
+
+        <div class="swiper-slide slide" style="background:url(images/home-slide-1.jpg) no-repeat">
+            <div class="content">
+                <span>explorar, descubrir, viajar</span>
+                <h3>Viajes alrededor del mundo</h3>
+                <a href="paquetes.php" class="btn">Descubre más</a>
+            </div>
+
+        </div>
+
+        <div class="swiper-slide slide" style="background:url(images/home-slide-2.jpg) no-repeat">
+            <div class="content">
+                <span>explorar, descubrir, viajar</span>
+                <h3>Descubre nuevos lugares</h3>
+                <a href="paquetes.php" class="btn">Descubre más</a>
+            </div>
+
+        </div>
+
+        <div class="swiper-slide slide" style="background:url(images/home-slide-3.jpg) no-repeat">
+            <div class="content">
+                <span>explorar, descubrir, viajar</span>
+                <h3>Haz que tu viaje valga la pena</h3>
+                <a href="paquetes.php" class="btn">Descubre más</a>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+ </div>
+
+ </section>
+
+
 <!-- seccion servicios  -->
  <section class="services">
 
@@ -39,13 +81,33 @@
  <div class="box-container">
 
     <div class="box">
-        <img src="images/icon-1png" alt="">
+        <img src="images/icon-1.png" alt="">
         <h3>Aventuras</h3>
     </div>
 
     <div class="box">
-        <img src="images/icon-2png" alt="">
+        <img src="images/icon-2.png" alt="">
         <h3>Tour guiados</h3>
+    </div>
+
+    <div class="box">
+        <img src="images/icon-3.png" alt="">
+        <h3>Trekking</h3>
+    </div>
+
+    <div class="box">
+        <img src="images/icon-4.png" alt="">
+        <h3>Camp fire</h3>
+    </div>
+
+    <div class="box">
+        <img src="images/icon-5.png" alt="">
+        <h3>Off road</h3>
+    </div>
+
+    <div class="box">
+        <img src="images/icon-6.png" alt="">
+        <h3>Camping</h3>
     </div>
 
 
