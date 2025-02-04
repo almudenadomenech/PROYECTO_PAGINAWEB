@@ -114,9 +114,72 @@
  </div>
  </section>
 
+<!-- Home about section -->
+
+<section class="home-about">
+
+    <div class="image">
+        <img src="images/about-img.jpg" alt="">
+    </div>
+
+    <div class="content">
+        <h3>Conocenos</h3>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit, odio. Error odio ipsum facilis ut exercitationem saepe, laboriosam dolore accusantium illum facere laudantium. Tempora explicabo atque earum magni ab nisi!</p>
+        <a href="AcercaDe.php" class="btn">Leer más</a>
+    </div>
+
+</section>
 
 
+<!-- Seccion paquetes del home -->
 
+<section class="home-packages">
+
+    <h1 class="heading">Nuestros paquetes </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <div class="image">
+                <img src="images/img-1.jpg" alt="">
+            </div>
+        
+        <div class="content">
+            <h3>Aventuras y tour</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <a href="booking.php" class="btn">Reserva ahora</a>
+        </div>
+        </div>
+
+        <div class="box">
+            <div class="image">
+                <img src="images/img-2.jpg" alt="">
+            </div>
+        
+        <div class="content">
+            <h3>Aventuras y tour</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <a href="booking.php" class="btn">Reserva ahora</a>
+        </div>
+        </div>
+
+        <div class="box">
+            <div class="image">
+                <img src="images/img-3.jpg" alt="">
+            </div>
+        
+        <div class="content">
+            <h3>Aventuras y tour</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <a href="booking.php" class="btn">Reserva ahora</a>
+        </div>
+        </div>
+
+    </div>
+
+    <div class="load-more"> <a href="paquetes.php" class="btn">Leer más</a></div>
+
+</section>
 
   <!-- seccion footer   -->
 <section class="footer">
