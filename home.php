@@ -31,7 +31,7 @@
 
 </section>
 
-<!-- seccion home  -->
+<!-- seccion home apertura -->
  <section class="home">
 
  <div class="swiper home-slider">
@@ -71,9 +71,10 @@
  </div>
 
  </section>
+<!-- seccion home apertura cierre-->
 
 
-<!-- seccion servicios  -->
+<!-- seccion servicios  apertura-->
  <section class="services">
 
  <h1 class="heading-title">Nuestros servicios</h1>
@@ -113,8 +114,10 @@
 
  </div>
  </section>
+<!-- seccion servicios  cierre-->
 
-<!-- Home about section -->
+
+<!-- Home about section apertura-->
 
 <section class="home-about">
 
@@ -124,18 +127,19 @@
 
     <div class="content">
         <h3>Conocenos</h3>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit, odio. Error odio ipsum facilis ut exercitationem saepe, laboriosam dolore accusantium illum facere laudantium. Tempora explicabo atque earum magni ab nisi!</p>
+        <p>En Melek Viajes, nos apasiona hacer de cada viaje una experiencia inolvidable. Somos un equipo de expertos en turismo comprometidos en ofrecerte los mejores destinos, aventuras personalizadas y un servicio excepcional. Ya sea que busques relajarte en una playa paradisíaca, explorar culturas fascinantes o disfrutar de una escapada única, estamos aquí para ayudarte a hacer realidad tus sueños de viaje. Únete a nosotros y descubre el mundo de una manera diferente. ¡Tu próxima aventura comienza con nosotros!</p>
         <a href="AcercaDe.php" class="btn">Leer más</a>
     </div>
 
 </section>
+<!-- Home about section cierre-->
 
 
-<!-- Seccion paquetes del home -->
+<!-- Seccion paquetes del home apertura-->
 
 <section class="home-packages">
 
-    <h1 class="heading">Nuestros paquetes </h1>
+    <h1 class="heading-title">Nuestros paquetes </h1>
 
     <div class="box-container">
 
@@ -180,8 +184,24 @@
     <div class="load-more"> <a href="paquetes.php" class="btn">Leer más</a></div>
 
 </section>
+<!-- Seccion paquetes del home cierre-->
 
-  <!-- seccion footer   -->
+
+<!--Oferta inicio apertura -->
+
+<section class="home-offer">
+
+    <div class="content">
+        <h3>Hasta un 50% de descuento </h3>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius temporibus </p>
+        <a href="booking.php" class="btn">Reserva ahora</a>
+    </div>
+
+</section>
+<!--Oferta inicio cierre -->
+
+
+<!-- seccion footer apertura -->
 <section class="footer">
 
     <div class="box-container">
@@ -222,6 +242,8 @@
 
     
 </section>
+<!-- seccion footer cierre -->
+
 
 <!-- swiper js link  -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>

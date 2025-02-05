@@ -31,15 +31,66 @@
 
 </section>
 
-<div class="heading" style="background:url(images/header-1.png) no-repeat" >
+<div class="heading" style="background:url(images/header-1.jpg) no-repeat" >
     <h1>Sobre nosotros</h1>
 </div>
 
 
+<!-- seccion acerca de apertura-->
+
+<section class="about">
+
+    <div class="image">
+        <img src="images/about-img.jpg" alt="">
+    </div>
+
+    <div class="content">
+        <h3>¿Por qué elegirnos?</h3>
+        <p>En Melek viajes, nos dedicamos a ofrecerte experiencias de viaje únicas que se adaptan a tus gustos y necesidades. Nuestro equipo de expertos está aquí para ayudarte a planificar el viaje perfecto, brindándote asesoramiento personalizado y asegurándose de que cada detalle esté cubierto, desde el primer paso hasta tu regreso a casa. </p>
+        <p>Con años de experiencia en la industria, trabajamos con los mejores proveedores para ofrecerte ofertas exclusivas y destinos de alta calidad. Además, nuestro compromiso con el servicio al cliente significa que siempre tendrás el apoyo que necesitas, en cualquier momento de tu viaje. ¡Déjanos ser tu compañero de confianza en cada aventura!</p>
+        <div class="icons-container">
+            <div class="icons">
+                <i class="fas fa-map"></i>
+                <span>Principales destinos</span>
+            </div>
+
+            <div class="icons">
+                <i class="fas fa-hand-holding-usd"></i>
+                <span>Precio asequible</span>
+            </div>
+
+            <div class="icons">
+                <i class="fas fa-headset"></i>
+                <span>Servicio de guía </span>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+<!-- seccion acerca de  cierre-->
+ 
+
+<!-- Seccion comentarios apertura -->
 
 
 
-  <!-- seccion footer   -->
+<!-- Seccion comentarios cierre -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- seccion footer apertura  -->
 <section class="footer">
 
     <div class="box-container">
@@ -80,6 +131,8 @@
 
     
 </section>
+<!-- seccion footer apertura  -->
+
 
 <!-- swiper js link  -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
