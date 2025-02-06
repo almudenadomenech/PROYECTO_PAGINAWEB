@@ -31,11 +31,72 @@
 
 </section>
 
-<div class="heading" style="background:url(images/header-3.png) no-repeat" >
+<div class="heading" style="background:url(images/header-3.jpg) no-repeat" >
     <h1>Reserva ahora</h1>
 </div>
 
+<!-- seccion booking inicio -->
 
+<section class="booking">
+
+    <h1 class="heading-title">Reserva tu viaje</h1>
+
+    <form action="booking.php" method= "post" class="booking-form">
+
+    <div class="flex">
+        <div class="inputBox">
+            <span>Nombre:</span>
+            <input type="text" placeholder="Introduce tu nombre" name="name">
+        </div>
+
+        <div class="inputBox">
+            <span>Email:</span>
+            <input type="email" placeholder="Introduce tu email" name="email">
+        </div>
+
+        <div class="inputBox">
+            <span>Teléfono:</span>
+            <input type="number" placeholder="Introduce tu teléfono" name="phone">
+        </div>
+
+        <div class="inputBox">
+            <span>Dirección:</span>
+            <input type="text" placeholder="Introduce tu dirección" name="address">
+        </div>
+
+        <div class="inputBox">
+            <span>Donde viajar:</span>
+            <input type="text" placeholder="Lugar que quieres visitar" name="Location">
+        </div>
+
+        <div class="inputBox">
+            <span>Número de personas:</span>
+            <input type="number" placeholder="Introduce número de personas" name="guest">
+        </div>
+
+        <div class="inputBox">
+            <span>Fecha inicio:</span>
+            <input type="date" name="arrivals">
+        </div>
+
+        <div class="inputBox">
+            <span>Fecha fin:</span>
+            <input type="date" name="leaving">
+        </div>
+    </div>
+
+    <input type="submit" value="submit" class="btn" name="send">
+    
+
+    </form>
+
+</section>
+
+
+
+
+
+<!-- seccion booking fin -->
 
 
 
