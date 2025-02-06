@@ -74,8 +74,96 @@
 
 <!-- Seccion comentarios apertura -->
 
+<section class="reviews">
 
+    <div class="swiper reviews-slider">
 
+        <div class="swiper-wrapper">
+
+            <div class= "swiper-slider slide">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates illo adipisci error, laboriosam quam similique aliquid suscipit possimus molestias. Quam ea eveniet cumque, a omnis dolorem fuga. Quod, temporibus optio.</p>
+                <h3>Carlos Martinez</h3>
+                <span>Viajero</span>
+                <img src="images/pic-1.jpg" alt="">
+            </div>
+
+            <div class="slide">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                   
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+                <h3>Carlos Martinez</h3>
+                <span>Viajero</span>
+                <img src="images/pic-2.jpg" alt="">
+            </div>
+
+            <div class="slide">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates illo adipisci error, laboriosam quam similique </p>
+                <h3>Carlos Martinez</h3>
+                <span>Viajero</span>
+                <img src="images/pic-3.jpg" alt="">
+            </div>
+
+            <div class="slide">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates illo adipisci error, laboriosam quam similique </h3>
+                <span>Viajero</span>
+                <img src="images/pic-4.jpg" alt="">
+            </div>
+
+            <div class="slide">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates illo adipisci error, laboriosam quam similique </p>
+                <h3>Carlos Martinez</h3>
+                <span>Viajero</span>
+                <img src="images/pic-5.jpg" alt="">
+            </div>
+
+            <div class="swiper-slider slide">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                   
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates</p>
+                <h3>Carlos Martinez</h3>
+                <span>Viajero</span>
+                <img src="images/pic-6.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    </section>
 <!-- Seccion comentarios cierre -->
 
 
