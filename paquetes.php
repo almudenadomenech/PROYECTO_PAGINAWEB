@@ -31,11 +31,156 @@
 
 </section>
 
-<div class="heading" style="background:url(images/header-2.png) no-repeat" >
+<div class="heading" style="background:url(images/header-2.jpg) no-repeat" >
     <h1>Paquetes</h1>
 </div>
 
+<!-- Seccion paquetes inicio -->
 
+<section class="packages">
+
+    <h1 class="heading-title">Principales destinos</h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <div class="image">
+                <img src="images/img-1.jpg" alt="">
+            </div>
+            <div class="content">
+                <h3>Aventura y tour</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, enim!</p>
+                <a href="booking.php" class="btn">Reserva ahora</a>
+            </div>
+        </div>
+    
+        <div class="box">
+            <div class="image">
+                <img src="images/img-2.jpg" alt="">
+            </div>
+            <div class="content">
+                <h3>Aventura y tour</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, enim!</p>
+                <a href="booking.php" class="btn">Reserva ahora</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image">
+                <img src="images/img-3.jpg" alt="">
+            </div>
+            <div class="content">
+                <h3>Aventura y tour</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, enim!</p>
+                <a href="booking.php" class="btn">Reserva ahora</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image">
+                <img src="images/img-4.jpg" alt="">
+            </div>
+            <div class="content">
+                <h3>Aventura y tour</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, enim!</p>
+                <a href="booking.php" class="btn">Reserva ahora</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image">
+                <img src="images/img-5.jpg" alt="">
+            </div>
+            <div class="content">
+                <h3>Aventura y tour</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, enim!</p>
+                <a href="booking.php" class="btn">Reserva ahora</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image">
+                <img src="images/img-6.jpg" alt="">
+            </div>
+            <div class="content">
+                <h3>Aventura y tour</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, enim!</p>
+                <a href="booking.php" class="btn">Reserva ahora</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image">
+                <img src="images/img-7.jpg" alt="">
+            </div>
+            <div class="content">
+                <h3>Aventura y tour</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, enim!</p>
+                <a href="booking.php" class="btn">Reserva ahora</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image">
+                <img src="images/img-8.jpg" alt="">
+            </div>
+            <div class="content">
+                <h3>Aventura y tour</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, enim!</p>
+                <a href="booking.php" class="btn">Reserva ahora</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image">
+                <img src="images/img-9.jpg" alt="">
+            </div>
+            <div class="content">
+                <h3>Aventura y tour</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, enim!</p>
+                <a href="booking.php" class="btn">Reserva ahora</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image">
+                <img src="images/img-10.jpg" alt="">
+            </div>
+            <div class="content">
+                <h3>Aventura y tour</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, enim!</p>
+                <a href="booking.php" class="btn">Reserva ahora</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image">
+                <img src="images/img-11.jpg" alt="">
+            </div>
+            <div class="content">
+                <h3>Aventura y tour</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, enim!</p>
+                <a href="booking.php" class="btn">Reserva ahora</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image">
+                <img src="images/img-12.jpg" alt="">
+            </div>
+            <div class="content">
+                <h3>Aventura y tour</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, enim!</p>
+                <a href="booking.php" class="btn">Reserva ahora</a>
+            </div>
+        </div>
+    
+    </div>
+
+    <div class="load-more"><span class="btn">Leer más</span></div>
+</section>
+
+<!-- Seccion paquetes fin -->
 
 
 
