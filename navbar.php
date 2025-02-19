@@ -14,6 +14,6 @@
    
 
     <div id="menu-btn" class="fas fa-bars"></div>
-    <div id="menu-btn" class="fas fa-bars"></div>
+    
 
 </section>
