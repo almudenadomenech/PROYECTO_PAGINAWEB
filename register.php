@@ -31,12 +31,15 @@
 
                 <label for="">Nombre de usuario</label>
                 <input type="text">
+                <span class="msg error"></span>
 
                 <label for="">Email</label>
                 <input type="text">
+                <span class="msg error"></span>
 
                 <label for="">Contraseña</label>
                 <input type="password">
+                <span class="msg error"></span>
 
                 <input type="submit" value="Registrarse">
 
@@ -57,6 +60,11 @@
     <?php
     include('footer.php');
 ?>
+
+<!-- swiper js link  -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+     <script src="js/script.js"></script>
 </body>
 
 </html>
