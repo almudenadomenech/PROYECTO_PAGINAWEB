@@ -23,6 +23,8 @@
     text-transform: capitalize;
 }
 
+
+
 html{
     font-size:62.5% ;
     /* overflow: hidden; */
@@ -659,3 +661,4 @@ section{
         font-size: 3.5rem;
     }
 }
+
