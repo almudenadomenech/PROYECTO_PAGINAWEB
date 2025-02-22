@@ -1,7 +1,7 @@
 
 
 body{
-    background: linear-gradient(90deg, #BF4222, #E30F87);
+     background: linear-gradient(90deg, #BF4222, #E30F87); 
     padding: 20px;
 }
 
@@ -124,6 +124,8 @@ input[type="submit"]:hover{
     
 }
 
+
+
 /* ---------RESPONSIVE---------- */
 @media screen and (max-width: 800px){
     .ctn-text{
@@ -135,3 +137,6 @@ input[type="submit"]:hover{
         background: white;
     }
 }
+
+
+
