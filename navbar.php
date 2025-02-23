@@ -1,6 +1,9 @@
 <section class="header">
 
-    <a href="home.php" class= "logo"> viajar.</a>
+    
+    <a href="home.php" class= "logo">
+    <img src="images/Logo.png" alt="">
+    </a>
 
     <nav class="navbar">
         <a href="home.php">Home</a>

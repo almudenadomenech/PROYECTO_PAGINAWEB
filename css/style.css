@@ -99,16 +99,19 @@ section{
    z-index: 1000;
    background-color: var(--white);
    display: flex;
-   padding-top: 2rem;
+   padding: 0 2rem;
    box-shadow: var(--box-shadow);
    align-items: center;
-   justify-content: space-between; 
+   justify-content: space-between;
+   height: 90px; 
 }
 
 .header .logo{
     font-size: 2.5rem;
     color: var(--black);
 }
+
+
 .header .navbar a{
     font-size: 2rem;
     margin-left: 2rem;
@@ -436,18 +439,23 @@ section{
     margin-top: 1rem;
 }
 
-.packages .box-container{
+.packages .box-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-    gap: 2rem
+    gap: 2rem;
+    align-items: stretch; /* Asegura que todas las cajas tengan la misma altura */
 }
+
 
 .packages .box-container .box{
     border: 1px solid black;
     box-shadow: var(--box-shadow);
     background: var(--white); 
     display: none;
-}
+    
+}  
+
+
 .packages .box-container .box:nth-child(1),
 .packages .box-container .box:nth-child(2),
 .packages .box-container .box:nth-child(3),
@@ -472,7 +480,11 @@ section{
 .packages .box-container .box .content{
     padding: 2rem;
     text-align: center;
+    
 }
+
+
+
 
 .packages .box-container .box .content h3{
     font-size: 2.5rem;

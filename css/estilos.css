@@ -1,9 +1,6 @@
 
 
-body{
-     background: linear-gradient(90deg, #BF4222, #E30F87); 
-    padding: 20px;
-}
+
 
 .container-all{
     width: 100%;
@@ -19,20 +16,16 @@ body{
 .ctn-form{
     width: 80%;
     padding: 40px;
-    background: #f7f7f7;
+    background: #cec0c0;
 }
 
-.logo{
-    width: 150px;
-    display: block;
-    margin: auto;
-}
+
 
 .title{
     text-align: center;
     margin-top: 20px;
     font-weight: 300;
-    color: #7a7a7a;
+    color: #000000;
 }
 
 label{
@@ -40,7 +33,7 @@ label{
     margin-top: 30px;
     font-size: 20px;
     font-weight: 300;
-    color: #7a7a7a;
+    color: #000000;
 }
 
 input[type="text"],
@@ -123,6 +116,30 @@ input[type="submit"]:hover{
     font-weight: 200;
     font-size: 18px;
     
+}
+
+/* TEXTO DE ERRROR */
+
+.msg-error{
+   color: red;
+   display: block;
+   margin-top: 10px; 
+}
+
+/* BIENVENIDA */
+
+.ctn-wellcome{
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+    padding: 100px;
+    margin: auto;
+    margin-top: 200px;
+    background: white;
+    border-radius: 20px;
+    margin-bottom: 100px;
+    
+
 }
 
 

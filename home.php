@@ -136,8 +136,8 @@
             </div>
         
         <div class="content">
-            <h3>Aventuras y tour</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <h3>Cultura y Tradición</h3>
+            <p>Experiencia Auténtica. Visitas a mercados, museos y barrios históricos para conocer el alma de cada destino.</p>
             <a href="booking.php" class="btn">Reserva ahora</a>
         </div>
         </div>
@@ -148,8 +148,8 @@
             </div>
         
         <div class="content">
-            <h3>Aventuras y tour</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <h3>Playas de Ensuelo</h3>
+            <p>Explora arrecifes, nada con delfines o prueba el surf en las mejores olas o Relájate en arenas blancas y aguas cristalinas con todo incluido.</p>
             <a href="booking.php" class="btn">Reserva ahora</a>
         </div>
         </div>
@@ -160,8 +160,8 @@
             </div>
         
         <div class="content">
-            <h3>Aventuras y tour</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <h3>Senderismo y Naturaleza</h3>
+            <p>Explora rutas impresionantes, cascadas escondidas y paisajes de ensueño. Disfruta de cabañas acogedoras, chimeneas y vistas panorámicas.</p>
             <a href="booking.php" class="btn">Reserva ahora</a>
         </div>
         </div>
