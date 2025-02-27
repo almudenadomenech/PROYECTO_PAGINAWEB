@@ -277,6 +277,8 @@ section{
     border: 1px solid black;
     box-shadow: var(--box-shadow);
     background: var(--white);
+
+  
 }
 
 .home-packages .box-container .box .image{
@@ -294,7 +296,11 @@ section{
 .home-packages .box-container .box .content{
     padding: 2rem;
     text-align: center;
+
+    
 }
+
+
 
 .home-packages .box-container .box .content h3{
     font-size: 2.5rem;
