@@ -53,8 +53,8 @@
 
         <div class="ctn-text">
             <div class="capa"> </div>
-            <h1 class="title-description">Lorem ipsum dolor sit amet.</h1>
-            <p class="text-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti cumque dignissimos mollitia quos nemo cum, error numquam amet suscipit architecto.</p>
+            <h1 class="title-description">¡Únete a Nosotros y Comienza tu Aventura!</h1>
+            <p class="text-description">Regístrate ahora para comenzar a explorar increíbles destinos y aprovechar todas las ofertas y servicios que tenemos para ti. ¡Haz realidad tu próximo viaje con nosotros!</p>
         </div>
     </div>
     <?php
