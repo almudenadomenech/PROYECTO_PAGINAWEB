@@ -1,3 +1,8 @@
+<?php
+    include 'code_register.php';
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,19 +32,19 @@
 
             <img src="images/logo.jpg" alt="" class="logo">
             <h1 class="title">Registrarse</h1>
-            <form action="">
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
 
                 <label for="">Nombre de usuario</label>
-                <input type="text">
-                <span class="msg error"></span>
+                <input type="text" name="username">
+                <span class="msg error"><?php echo $username_error; ?></span>
 
                 <label for="">Email</label>
-                <input type="text">
-                <span class="msg error"></span>
+                <input type="text" name="email">
+                <span class="msg error"></span> <?php echo $email_error; ?></span>
 
                 <label for="">Contraseña</label>
-                <input type="password">
-                <span class="msg error"></span>
+                <input type="password" name="password">
+                <span class="msg error"></span> <?php echo $password_error; ?></span>
 
                 <input type="submit" value="Registrarse">
 
