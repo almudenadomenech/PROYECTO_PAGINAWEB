@@ -1,3 +1,8 @@
+<?php
+    require 'code_login.php';
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,13 +32,13 @@
 
             <img src="images/logo.jpg" alt="" class="logo">
             <h1 class="title">Iniciar Sesión</h1>
-            <form action="">
+            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
                 <label for="">Email</label>
-                <input type="text">
-                <span class="msg error"></span>
+                <input type="text" name="email">
+                <span class="msg error"><?php echo $email_error;?></span>
 
                 <label for="">Contraseña</label>
-                <input type="password">
+                <input type="password" name="password">
                 <span class="msg error"></span>
 
                 <input type="submit" value="inicio">
