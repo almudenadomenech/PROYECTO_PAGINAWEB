@@ -39,7 +39,7 @@
 
                 <label for="">Contraseña</label>
                 <input type="password" name="password">
-                <span class="msg error"></span>
+                <span class="msg error"><?php echo $password_error;?></span>
 
                 <input type="submit" value="inicio">
 

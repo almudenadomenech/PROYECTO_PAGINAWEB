@@ -1,3 +1,12 @@
+<?php
+
+session_start();
+
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true)[
+    header("location:home.php")]
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,7 +34,7 @@ include('navbar.php');
     <div class="ctn-wellcome">
         <img src="" alt="" class="logo-wellcome">
         <h1 class="title-wellcome">Bienvenido!</h1>
-        <a href="" class="close-sesion">Cerrar sesión</a>
+        <a href="cerrar_sesion.php" class="close-sesion">Cerrar sesión</a>
     </div>
 
 
