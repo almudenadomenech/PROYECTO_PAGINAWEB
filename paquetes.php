@@ -6,9 +6,7 @@
     <title>About</title>
 
     <!-- swiper css link -->
-    <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    <linkrel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
 />
 
      <!-- font awesone cdn link  -->
@@ -27,7 +25,7 @@
 
 <!-- Seccion paquetes inicio -->
 
-<section class="packages">
+<section class="home-packages">
 
     <h1 class="heading-title">Principales destinos</h1>
 
@@ -35,7 +33,7 @@
 
         <div class="box">
             <div class="image">
-                <img src="images/img-1.jpg" alt="">
+                <img src="images/img-1.jpg" alt="Destino 1">
             </div>
             <div class="content">
                 <h3>Encanto de Estambun</h3>
@@ -46,7 +44,7 @@
     
         <div class="box">
             <div class="image">
-                <img src="images/img-2.jpg" alt="">
+                <img src="images/img-2.jpg" alt="Destino 2">
             </div>
             <div class="content">
                 <h3>Paraíso del Caribe</h3>
@@ -57,7 +55,7 @@
 
         <div class="box">
             <div class="image">
-                <img src="images/img-13.jpg" alt="">
+                <img src="images/img-13.jpg" alt="Destino 4">
             </div>
             <div class="content">
                 <h3>Aventura en las Alturas de Nepal</h3>
@@ -167,7 +165,7 @@
     
     </div>
 
-    <div class="load-more"><span class="btn">Leer más</span></div>
+    <div class="load-more-packages"><span class="btn">Leer más</span></div>
 </section>
 
 <!-- Seccion paquetes fin -->

@@ -173,7 +173,9 @@ session_start();
 
     </div>
 
-    <div class="load-more"> <a href="paquetes.php" class="btn">Leer más</a></div>
+    <div class="load-more">
+        <a href="paquetes.php" class="btn">Leer más</a>
+    </div>
 
 </section>
 <!-- Seccion paquetes del home cierre-->
