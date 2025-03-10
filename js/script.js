@@ -35,35 +35,42 @@ new Swiper(".reviews-slider", {
 });
 
 // Lógica para los paquetes dinámicos
-let loadMoreBtn = document.querySelector('.load-more-packges .btn'); // Botón "Leer más"
-let boxes = document.querySelectorAll('.home-packages .box-container .box'); // Todos los paquetes
+let loadMoreBtn = document.querySelector('.load-more-packages .btn'); // Botón "Leer más"
+let boxes = document.querySelectorAll('.packages .box-container .box'); // Todos los paquetes
+
 let currentItem = 3; // Número inicial de paquetes visibles
 
-// Función de inicialización
+// Función para inicializar los paquetes y mostrar los primeros 3
 const initializePackages = () => {
     boxes.forEach((box, index) => {
+        // Solo mostrar los primeros 3 paquetes
         box.style.display = index < currentItem ? 'inline-block' : 'none'; // Mostrar solo los primeros 3 paquetes
     });
     checkLoadMoreButton(); // Verificar si el botón debe estar visible
 };
 
-// Verificar si el botón "Leer más" debe ocultarse
+// Verificar si el botón "Leer más" debe estar visible o no
 const checkLoadMoreButton = () => {
     if (currentItem >= boxes.length) {
         loadMoreBtn.style.display = 'none'; // Ocultar el botón si no hay más paquetes
+    } else {
+        loadMoreBtn.style.display = 'inline-block'; // Mostrar el botón si hay más paquetes
     }
 };
 
-// Lógica para cargar más paquetes al hacer clic en el botón
+// Lógica para cargar más paquetes cuando se haga clic en "Leer más"
 loadMoreBtn.onclick = () => {
-    for (let i = currentItem; i < currentItem + 3; i++) {
-        if (i < boxes.length) {
-            boxes[i].style.display = 'inline-block'; // Mostrar los siguientes 3 paquetes
+    let nextItems = currentItem + 3; // Cargar 3 más paquetes
+    boxes.forEach((box, index) => {
+        if (index < nextItems) {
+            box.style.display = 'inline-block'; // Mostrar los siguientes 3 paquetes
         }
-    }
-    currentItem += 3; // Incrementar el contador de paquetes visibles
+    });
+
+    currentItem = nextItems; // Actualizar el contador de paquetes visibles
     checkLoadMoreButton(); // Verificar el estado del botón después de mostrar más paquetes
 };
 
 // Ejecutar la inicialización cuando se cargue la página
 window.addEventListener('load', initializePackages);
+

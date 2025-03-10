@@ -25,7 +25,7 @@
 
 <!-- Seccion paquetes inicio -->
 
-<section class="home-packages">
+<section class="packages">
 
     <h1 class="heading-title">Principales destinos</h1>
 

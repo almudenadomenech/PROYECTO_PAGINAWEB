@@ -615,87 +615,84 @@ section {
     margin-top: 1rem;
 }
 
-/* Sección "packages" para mostrar diferentes paquetes o servicios */
+/* ------------------PAQUETES---------------- */
+
 /* Sección "packages" para mostrar diferentes paquetes o servicios */
 .packages .box-container {
     display: grid;
     /* Crea columnas responsivas con un ancho mínimo de 30rem */
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     gap: 2rem;
-    align-items: stretch; /* Asegura que todas las cajas tengan la misma altura */
-}
- 
-/* Muestra de forma explícita las primeras 6 cajas */
-.packages .box-container .box:nth-child(1),
-.packages .box-container .box:nth-child(2),
-.packages .box-container .box:nth-child(3),
-.packages .box-container .box:nth-child(4),
-.packages .box-container .box:nth-child(5),
-.packages .box-container .box:nth-child(6) {
-    display: inline-block;
 }
 
 /* Contenedor general de cada caja */
 .packages .box-container .box {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Asegura un espacio uniforme entre elementos */
-    align-items: center;
-    background: var(--white); /* Fondo blanco */
-    border: 1px solid #ddd; /* Borde simple */
-    border-radius: 8px; /* Bordes redondeados */
-    box-shadow: var(--box-shadow); /* Agrega sombra para mayor estética */
-    overflow: hidden; /* Evita desbordamientos */
-    padding: 1rem; /* Espaciado interno */
+    /* Borde sutil en color negro */
+    border: 1px solid black;
+    /* Aplica sombra para dar profundidad */
+    box-shadow: var(--box-shadow);
+    /* Fondo blanco */
+    background: var(--white);
+    display: none; /* Por defecto, ocultar todos los paquetes */
+}
+
+/* Muestra explícitamente los primeros 3 paquetes */
+.packages .box-container .box:nth-child(-n+3) {
+    display: inline-block; /* Mostrar los primeros 3 paquetes */
 }
 
 /* Estilos para el contenido textual dentro de cada caja de paquete */
-.home-packages .box-container .box .content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Asegura un espaciado uniforme entre los elementos */
-    align-items: center;
-    height: 100%; /* Usa toda la altura disponible */
-    padding: 1rem; /* Espaciado interno */
-    box-sizing: border-box; /* Incluye relleno en el tamaño total */
-    overflow: hidden; /* Evita que el contenido sobresalga */
+.packages .box-container .box .content {
+    padding: 2rem;
+    text-align: center;
 }
 
-.home-packages .box-container .box .content h3 {
-    margin: 0; /* Elimina márgenes */
-    flex-shrink: 0; /* Evita que los títulos se reduzcan si falta espacio */
-    margin-top: 20px;
-    font-size: 2rem; /* Tamaño del texto */
-    color: var(--black); /* Color del texto */
-    text-align: center; /* Centra el texto */
+.packages .box-container .box .content h3 {
+    position: relative;
+    top: 0;
+    font-size: 2.5rem;
+    color: var(--black);
+    margin: 1rem 0;
+    padding: 0.5rem 0;
+    text-align: center;
+}
+
+/* Estilos para la sección de imagen dentro de cada caja de paquete */
+.packages .box-container .box .image {
+    height: 25rem;
+    overflow: hidden;
+}
+
+.packages .box-container .box .image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transform: .2s linear;
 }
 
 /* Ajusta el párrafo */
-.home-packages .box-container .box .content p {
-    font-size: 1.5rem; /* Tamaño de fuente para mantener legibilidad */
-    color: var(--light-black); /* Color del texto */
-    line-height: 1.8; /* Altura de línea para una mejor disposición del texto */
-    padding: 1rem 0; /* Espaciado interno */
-    margin: 0; /* Elimina márgenes adicionales */
-    overflow: hidden; /* Mantiene el contenido dentro del contenedor */
-    text-align: center; /* Centra el texto */
-    white-space: normal; /* Permite que el texto ocupe múltiples líneas */
+.packages .box-container .box .content p {
+    font-size: 1.5rem;
+    color: var(--light-black);
+    line-height: 2;
+    padding: 1rem 0;
 }
 
 /* Ajusta el botón "Reserva ahora" */
-.home-packages .box-container .box .content .btn {
-    margin-top: auto; /* Empuja el botón hacia el final */
-    padding: 0.8rem 1.5rem; /* Espaciado interno */
-    background-color: var(--black); /* Color del botón */
-    color: var(--white); /* Color del texto del botón */
-    text-transform: capitalize; /* La primera letra en mayúsculas */
-    border-radius: 5px; /* Bordes redondeados */
-    text-decoration: none; /* Sin subrayado */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Agrega sombra al botón */
-    transition: background-color 0.3s ease; /* Transición para efecto hover */
+.packages .box-container .box .content .btn {
+    margin-top: auto;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--black);
+    color: var(--white);
+    text-transform: capitalize;
+    border-radius: 5px;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
 }
-.home-packages .box-container .box .content .btn:hover {
-    background-color: var(--main-color); /* Cambia el color al pasar el cursor */
+
+.packages .box-container .box .content .btn:hover {
+    background-color: var(--main-color);
 }
 
 /* Contenedor "load more" para paquetes */
@@ -703,6 +700,7 @@ section {
     text-align: center;
     margin-top: 2rem;
 }
+
 
 
 
