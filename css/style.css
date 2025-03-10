@@ -392,7 +392,10 @@ section {
     padding: 3rem;
     /* Fondo claro para contrastar con otros elementos */
     background: var(--light-bg);
+    /* Centra el contenido del botón */
+    text-align: center;
 }
+
 .home-about .content h3 {
     /* Tamaño de fuente grande para el título */
     font-size: 3rem;
@@ -741,10 +744,32 @@ section {
     background-color: var(--main-color);
 }
 
-/* Contenedor "load more" para paquetes */
-.packages .load-more {
-    text-align: center;
-    margin-top: 2rem;
+/* Ajuste del contenedor "load more" para centrar el botón en la pantalla */
+.packages .load-more-packages {
+    display: flex;                /* Usamos flexbox para alinear */
+    justify-content: center;      /* Centra horizontalmente */
+    align-items: center;          /* Centra verticalmente */
+    padding: 1rem 0;              /* Espaciado superior e inferior */
+    position: relative;           /* Para usar transformaciones */
+    bottom: 0;                    /* Asegura que esté al fondo de la sección */
+    width: 100%;                  /* Asegura que ocupe todo el ancho disponible */
+}
+
+/* Estilo del botón "Leer más" */
+.packages .load-more-packages .btn {
+    padding: 1rem 2rem;
+    background-color: var(--black);
+    color: var(--white);
+    text-transform: capitalize;
+    border-radius: 5px;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+/* Hover en el botón */
+.packages .load-more-packages .btn:hover {
+    background-color: var(--main-color);
 }
 
 

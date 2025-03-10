@@ -120,7 +120,7 @@ session_start();
     <div class="content">
         <h3>Conocenos</h3>
         <p>En Melek Viajes, nos apasiona hacer de cada viaje una experiencia inolvidable. Somos un equipo de expertos en turismo comprometidos en ofrecerte los mejores destinos, aventuras personalizadas y un servicio excepcional. Ya sea que busques relajarte en una playa paradisíaca, explorar culturas fascinantes o disfrutar de una escapada única, estamos aquí para ayudarte a hacer realidad tus sueños de viaje. Únete a nosotros y descubre el mundo de una manera diferente. ¡Tu próxima aventura comienza con nosotros!</p>
-        <a href="AcercaDe.php" class="btn">Leer más</a>
+        <a href="AcercaDe.php" class="btn" ">Leer más</a>
     </div>
 
 </section>
