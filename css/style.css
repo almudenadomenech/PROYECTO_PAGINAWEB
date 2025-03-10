@@ -416,15 +416,15 @@ section {
     background: var(--light-bg);
 }
 
-/* Configuración común para cajas de paquetes, contenido en "home-about" y cajas en "packages" */
+/* Contenedor general de cada caja en los paquetes */
 .home-packages .box-container .box,
-.home-about .content,
 .packages .box-container .box {
-    /* Uso de flexbox en columna para organizar internamente los elementos */
-    display: flex;
-    flex-direction: column;  /* Los elementos se apilan verticalmente */
-    height: 100%;            /* Se asegura que ocupen toda la altura del contenedor */
-    justify-content: space-between;  /* Distribuye el espacio para separar el contenido */
+    display: flex;                    /* Organiza los elementos en columna */
+    flex-direction: column;            /* Los elementos se apilan verticalmente */
+    justify-content: space-between;    /* Distribuye el espacio, empujando el botón hacia abajo */
+    background: var(--white);          /* Fondo blanco */
+    border: 1px solid black;           /* Borde negro */
+    box-shadow: var(--box-shadow);     /* Sombra */
 }
 
 /* Asegura que el botón de reserva se posicione al final del contenedor */
@@ -446,12 +446,14 @@ section {
 
 /* Estilos para cada caja individual de paquete en "home-packages" */
 .home-packages .box-container .box {
-    /* Borde sutil en color negro */
-    border: 1px solid black;
-    /* Aplica sombra para dar profundidad */
-    box-shadow: var(--box-shadow);
-    /* Fondo blanco */
-    background: var(--white);
+    display: flex; /* Flexbox para manejar el contenido */
+    flex-direction: column; /* Asegura que los elementos se apilen verticalmente */
+    justify-content: flex-start; /* Asegura que el contenido comience desde la parte superior */
+    background: var(--white); /* Fondo blanco */
+    border: 1px solid black; /* Borde negro */
+    box-shadow: var(--box-shadow); /* Sombra */
+    height: 100%; /* Asegura que la caja ocupe toda la altura disponible */
+    min-height: 500px; /* Altura mínima para asegurar que todas las cajas tengan la misma altura */
 }
 
 /* Estilos para la sección de imagen dentro de cada caja de paquete */
@@ -473,17 +475,24 @@ section {
 
 /* Estilos para el contenido textual dentro de cada caja de paquete */
 .home-packages .box-container .box .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Esto asegura que los elementos dentro del .content estén distribuidos correctamente */
     padding: 2rem;
     text-align: center;
+    flex-grow: 1; /* Permite que el contenido ocupe el espacio restante */
 }
 .home-packages .box-container .box .content h3 {
-    position: relative; /* Úsalo si quieres ajustar manualmente */
-    top: 0; /* Asegúrate de que no haya desplazamiento vertical */
-    font-size: 2.5rem; /* Mantén un tamaño uniforme */
+    position: relative;
+    top: 0;
+    font-size: 2.5rem;
     color: var(--black);
-    margin: 1rem 0; /* Controla los márgenes exteriores */
-    padding: 0.5rem 0; /* Controla el espacio interno */
-    text-align: center; /* Centra el texto si es necesario */
+    margin: 1rem 0;
+    padding: 0.5rem 0;
+    text-align: center;
+    min-height: 4.5rem; /* Establecer una altura mínima para el título */
+    display: flex;
+    align-items: center; /* Centra el título verticalmente */
 }
 
 .home-packages .box-container .box .content p {
@@ -491,7 +500,27 @@ section {
     color: var(--light-black);
     line-height: 2;
     padding: 1rem 0;
+    flex-grow: 1; /* Permite que el párrafo crezca para llenar el espacio */
 }
+
+/* Ajustes de estilo para el botón "Reservar ahora" */
+.home-packages .box-container .box .content .btn-reservar {
+    margin-top: auto; /* Empuja el botón hacia el final del contenedor */
+    padding: 1rem 2rem;
+    background-color: var(--black);
+    color: var(--white);
+    text-transform: capitalize;
+    border-radius: 5px;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+/* Hover en el botón */
+.home-packages .box-container .box .content .btn-reservar:hover {
+    background-color: var(--main-color);
+}
+
 
 /* Contenedor "load more" para cargar más paquetes */
 .home-packages .load-more {
@@ -617,23 +646,37 @@ section {
 
 /* ------------------PAQUETES---------------- */
 
+/* Contenedor principal de la sección de paquetes */
+.packages {
+    padding: 2rem 0;
+}
+
 /* Sección "packages" para mostrar diferentes paquetes o servicios */
 .packages .box-container {
     display: grid;
-    /* Crea columnas responsivas con un ancho mínimo de 30rem */
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     gap: 2rem;
+    /* Default: Crea columnas responsivas con un ancho mínimo de 30rem */
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
 }
 
-/* Contenedor general de cada caja */
+/* Media query para pantallas más grandes */
+@media (min-width: 1200px) {
+    .packages .box-container {
+        /* Ajuste: Crea 3 columnas en pantallas grandes */
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Estilos para cada caja de paquete */
 .packages .box-container .box {
-    /* Borde sutil en color negro */
-    border: 1px solid black;
-    /* Aplica sombra para dar profundidad */
-    box-shadow: var(--box-shadow);
-    /* Fondo blanco */
+    display: flex;
+    flex-direction: column; /* Organiza los elementos de arriba hacia abajo */
     background: var(--white);
-    display: none; /* Por defecto, ocultar todos los paquetes */
+    border: 1px solid black;
+    box-shadow: var(--box-shadow);
+    min-height: 500px; /* Altura mínima */
+    position: relative; /* Posición relativa para el contenedor */
+    padding-bottom: 4rem; /* Espacio reservado para el botón */
 }
 
 /* Muestra explícitamente los primeros 3 paquetes */
@@ -641,20 +684,18 @@ section {
     display: inline-block; /* Mostrar los primeros 3 paquetes */
 }
 
-/* Estilos para el contenido textual dentro de cada caja de paquete */
+/* Estilo del contenido dentro de la caja */
 .packages .box-container .box .content {
     padding: 2rem;
     text-align: center;
+    flex-grow: 1; /* Hace que el contenido ocupe el espacio restante */
 }
 
+/* Título dentro del contenido */
 .packages .box-container .box .content h3 {
-    position: relative;
-    top: 0;
     font-size: 2.5rem;
-    color: var(--black);
     margin: 1rem 0;
-    padding: 0.5rem 0;
-    text-align: center;
+    color: var(--black);
 }
 
 /* Estilos para la sección de imagen dentro de cada caja de paquete */
@@ -670,18 +711,22 @@ section {
     transform: .2s linear;
 }
 
-/* Ajusta el párrafo */
+/* Párrafo */
 .packages .box-container .box .content p {
     font-size: 1.5rem;
     color: var(--light-black);
-    line-height: 2;
+    line-height: 1.8;
     padding: 1rem 0;
 }
 
-/* Ajusta el botón "Reserva ahora" */
+/* Botón "Reserva ahora" */
 .packages .box-container .box .content .btn {
-    margin-top: auto;
-    padding: 0.8rem 1.5rem;
+    margin-top: 1rem; /* Espacio entre el párrafo y el botón */
+    position: absolute;
+    bottom: 1rem; /* Posición del botón desde la parte inferior del contenedor */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 1rem 2rem;
     background-color: var(--black);
     color: var(--white);
     text-transform: capitalize;
@@ -691,6 +736,7 @@ section {
     transition: background-color 0.3s ease;
 }
 
+/* Hover en el botón */
 .packages .box-container .box .content .btn:hover {
     background-color: var(--main-color);
 }
@@ -700,6 +746,12 @@ section {
     text-align: center;
     margin-top: 2rem;
 }
+
+
+
+
+
+
 
 
 
