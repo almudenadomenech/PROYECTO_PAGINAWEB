@@ -1,6 +1,6 @@
 <?php
-include('navbar.php');
-include('conexion.php'); // Asegúrate de que la conexión a la base de datos sea correcta
+include('../includes/navbar.php');
+include('../includes/conexion.php'); // Asegúrate de que la conexión a la base de datos sea correcta
 include('booking-form.php');  // Incluye la lógica para procesar el formulario
 ?>
 
@@ -10,7 +10,7 @@ include('booking-form.php');  // Incluye la lógica para procesar el formulario
 // Verificar si el usuario está logueado
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     // Si no está logueado, redirigir a la página de login
-    header("Location: login.php");
+    header("Location: ../paginas/login.php");
     exit;
 }
 ?>
@@ -20,9 +20,9 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 
 <!-- font awesome cdn link -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="../css/style.css">
 
-<div class="heading" style="background:url(images/header-3.jpg) no-repeat">
+<div class="heading" style="background:url(../images/header-3.jpg) no-repeat">
     <h1>Reserva ahora</h1>
 </div>
 
@@ -79,12 +79,12 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 
 <!-- Sección de footer -->
 <?php
-include('footer.php');
+include('../includes/footer.php');
 ?>
 
 <!-- swiper js link -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script src="js/script.js"></script>
+<script src="../js/script.js"></script>
 
 </body>
 </html>

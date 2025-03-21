@@ -1,6 +1,6 @@
 <?php
 // Incluir archivo de conexión a la base de datos
-require_once "conexion.php";
+require_once "../includes/conexion.php";
 
 // Definir variables e inicializar con valores vacios
 $username = $email = $password = "";
@@ -84,7 +84,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
             $param_password = password_hash($password, PASSWORD_DEFAULT); // ENCRIPTANDO CONTRASEÑA
 
             if(mysqli_stmt_execute($stmt)){
-                header('location:login.php');
+                header('location:../paginas/login.php');
             }else{
                 echo "Algo salió mal";
             }

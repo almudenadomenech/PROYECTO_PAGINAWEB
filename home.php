@@ -19,7 +19,7 @@ session_start();
 <body>
 
 <?php
-    include('navbar.php');
+    include('includes/navbar.php');
 ?>
 
 <!-- seccion home apertura -->
@@ -33,7 +33,7 @@ session_start();
             <div class="content">
                 <span>explorar, descubrir, viajar</span>
                 <h3>Viajes alrededor del mundo</h3>
-                <a href="paquetes.php" class="btn">Descubre más</a>
+                <a href="paginas/paquetes.php" class="btn">Descubre más</a>
             </div>
 
         </div>
@@ -42,7 +42,7 @@ session_start();
             <div class="content">
                 <span>explorar, descubrir, viajar</span>
                 <h3>Descubre nuevos lugares</h3>
-                <a href="paquetes.php" class="btn">Descubre más</a>
+                <a href="paginas/paquetes.php" class="btn">Descubre más</a>
             </div>
 
         </div>
@@ -51,7 +51,7 @@ session_start();
             <div class="content">
                 <span>explorar, descubrir, viajar</span>
                 <h3>Haz que tu viaje valga la pena</h3>
-                <a href="paquetes.php" class="btn">Descubre más</a>
+                <a href="paginas/paquetes.php" class="btn">Descubre más</a>
             </div>
 
         </div>
@@ -119,7 +119,7 @@ session_start();
     <div class="content">
         <h3>Conocenos</h3>
         <p>En Melek Viajes, nos apasiona hacer de cada viaje una experiencia inolvidable. Somos un equipo de expertos en turismo comprometidos en ofrecerte los mejores destinos, aventuras personalizadas y un servicio excepcional. Ya sea que busques relajarte en una playa paradisíaca, explorar culturas fascinantes o disfrutar de una escapada única, estamos aquí para ayudarte a hacer realidad tus sueños de viaje. Únete a nosotros y descubre el mundo de una manera diferente. ¡Tu próxima aventura comienza con nosotros!</p>
-        <a href="AcercaDe.php" class="btn" ">Leer más</a>
+        <a href="paginas/AcercaDe.php" class="btn" >Leer más</a>
     </div>
 
 </section>
@@ -142,7 +142,7 @@ session_start();
         <div class="content">
             <h3>Cultura y Tradición</h3>
             <p>Experiencia Auténtica. Visitas a mercados, museos y barrios históricos para conocer el alma de cada destino.</p>
-            <a href="booking.php" class="btn">Reserva ahora</a>
+            <a href="booking/booking.php" class="btn">Reserva ahora</a>
         </div>
         </div>
 
@@ -154,7 +154,7 @@ session_start();
         <div class="content">
             <h3>Playas de Ensuelo</h3>
             <p>Explora arrecifes, nada con delfines o prueba el surf en las mejores olas o Relájate en arenas blancas y aguas cristalinas con todo incluido.</p>
-            <a href="booking.php" class="btn">Reserva ahora</a>
+            <a href="booking/booking.php" class="btn">Reserva ahora</a>
         </div>
         </div>
 
@@ -166,14 +166,14 @@ session_start();
         <div class="content">
             <h3>Senderismo y Naturaleza</h3>
             <p>Explora rutas impresionantes, cascadas escondidas y paisajes de ensueño. Disfruta de cabañas acogedoras, chimeneas y vistas panorámicas.</p>
-            <a href="booking.php" class="btn">Reserva ahora</a>
+            <a href="booking/booking.php" class="btn">Reserva ahora</a>
         </div>
         </div>
 
     </div>
 
     <div class="load-more">
-        <a href="paquetes.php" class="btn">Leer más</a>
+        <a href="paginas/paquetes.php" class="btn">Leer más</a>
     </div>
 
 </section>
@@ -187,7 +187,7 @@ session_start();
     <div class="content">
         <h3>Hasta un 50% de descuento </h3>
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius temporibus </p>
-        <a href="booking.php" class="btn">Reserva ahora</a>
+        <a href="booking/booking.php" class="btn">Reserva ahora</a>
     </div>
 
 </section>
@@ -196,7 +196,7 @@ session_start();
 
 <!-- seccion footer apertura -->
 <?php
-    include('footer.php');
+    include('includes/footer.php');
 ?>
 <!-- seccion footer cierre -->
 

@@ -7,7 +7,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
     exit;
 }
 
-require_once "conexion.php"; // Asegúrate de que este archivo define $link
+require_once "../includes/conexion.php"; // Asegúrate de que este archivo define $link
 
 $email = $password = "";
 $email_error = $password_error = "";

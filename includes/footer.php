@@ -6,18 +6,18 @@
 
         <div class="box">
             <h3>Enlaces rápidos</h3>
-        <a href="home.php"> <i class="i.fas.fa-angle-right"></i>  Home</a>
-        <a href="acercaDe.php"> <i class="i.fas.fa-angle-right"></i>Sobre nosotros</a>
-        <a href="paquetes.php"><i class="i.fas.fa-angle-right"></i>Paquetes</a>
-        <a href="booking.php"><i class="i.fas.fa-angle-right"></i>Booking</a>
+        <a href="../home.php"> <i class="i.fas.fa-angle-right"></i>  Home</a>
+        <a href="../paginas/AcercaDe.php"> <i class="i.fas.fa-angle-right"></i>Sobre nosotros</a>
+        <a href="../paginas/paquetes.php"><i class="i.fas.fa-angle-right"></i>Paquetes</a>
+        <a href="../booking/booking.php"><i class="i.fas.fa-angle-right"></i>Booking</a>
         </div>
 
         <div class="box">
             <h3> Enlaces adicionales</h3>
-        <a href="paginas_footer/preguntas_frecuentes.php"> <i class="i.fas.fa-angle-right"></i>FAQ</a>
-        <a href="paginas_footer/sobre_nosotros.php"> <i class="i.fas.fa-angle-right"></i>Sobre nosotros</a>
-        <a href="paginas_footer/politicas_privacidad.php"> <i class="i.fas.fa-angle-right"></i>Política de privacidad</a>
-        <a href="paginas_footer/condiciones_uso.php"> <i class="i.fas.fa-angle-right"></i>Condiciones de uso</a>
+        <a href="../paginas_footer/preguntas_frecuentes.php"> <i class="i.fas.fa-angle-right"></i>FAQ</a>
+        <a href="../paginas_footer/sobre_nosotros.php"> <i class="i.fas.fa-angle-right"></i>Sobre nosotros</a>
+        <a href="../paginas_footer/politicas_privacidad.php"> <i class="i.fas.fa-angle-right"></i>Política de privacidad</a>
+        <a href="../paginas_footer/condiciones_uso.php"> <i class="i.fas.fa-angle-right"></i>Condiciones de uso</a>
         </div>
 
         <div class="box">
