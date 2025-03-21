@@ -13,19 +13,18 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 }
 ?>
 
-
 <!-- swiper css link -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
-<!-- font awesone cdn link  -->
+<!-- font awesome cdn link -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="css/style.css">
+
 <div class="heading" style="background:url(images/header-3.jpg) no-repeat">
     <h1>Reserva ahora</h1>
 </div>
 
-<!-- seccion booking inicio -->
-
+<!-- Sección de formulario de reserva -->
 <section class="booking">
     <h1 class="heading-title">Reserva tu viaje</h1>
 
@@ -53,7 +52,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 
             <div class="inputBox">
                 <span>Donde viajar:</span>
-                <input type="text" placeholder="Lugar que quieres visitar" name="Location">
+                <input type="text" placeholder="Lugar que quieres visitar" name="location">
             </div>
 
             <div class="inputBox">
@@ -76,7 +75,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     </form>
 </section>
 
-<!-- seccion footer -->
+<!-- Sección de footer -->
 <?php
 include('footer.php');
 ?>
@@ -84,5 +83,6 @@ include('footer.php');
 <!-- swiper js link -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="js/script.js"></script>
+
 </body>
 </html>
