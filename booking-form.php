@@ -18,8 +18,5 @@ if(isset($_POST['send'])) {
 
     header("location: booking.php");
     exit;  // Asegúrate de que el script termine después de la redirección
-} else {
-    // Mostrar error si algo salió mal
-    echo "Error: " . mysqli_error($connection);
-}
+} 
 ?>

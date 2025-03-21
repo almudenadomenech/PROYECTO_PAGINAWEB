@@ -1,9 +1,11 @@
 <?php
 include('navbar.php');
+include('conexion.php'); // Asegúrate de que la conexión a la base de datos sea correcta
+include('booking-form.php');  // Incluye la lógica para procesar el formulario
 ?>
 
 <?php
-session_start(); // Iniciar la sesión
+
 
 // Verificar si el usuario está logueado
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
