@@ -887,7 +887,63 @@ section {
 }
 
 
-/*-------ESTILOS PARA BOOKING-LIST (LISTADO DE RESERVAS)------ */
+/*-------ESTILOS PARA BOOKING-LIST (LISTADO DE RESERVAS)------ *
+
+/* ----------------------------- ESTILOS GENERALES ----------------------------- */
+
+/* Sección del formulario */
+.form-section {
+    padding: 2rem;
+    background: var(--light-bg);
+    border-radius: 1rem;
+    box-shadow: var(--box-shadow);
+    max-width: 1100px;
+    margin: 2rem auto;
+}
+
+/* Contenedor del formulario */
+.form-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los inputs se distribuyan en múltiples líneas */
+    gap: 2rem; /* Espaciado uniforme entre los elementos */
+}
+
+/* Estilo de cada input */
+.inputBox {
+    flex: 1 1 32%; /* Ocupa un 32% del ancho del contenedor para lograr tres columnas */
+    min-width: 300px; /* Ancho mínimo para evitar que los inputs se vuelvan demasiado pequeños */
+    box-sizing: border-box; /* Asegura que padding y bordes no desborden el tamaño */
+}
+
+/* Estilo de los inputs */
+.inputBox input {
+    width: 100%; /* El input ocupa todo el ancho del contenedor */
+    padding: 1.2rem;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 1.6rem;
+    color: var(--black);
+    background-color: var(--white);
+    transition: border-color 0.3s ease;
+}
+
+/* Texto de los inputs */
+.inputBox span {
+    font-size: 1.5rem;
+    color: var(--light-black);
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1000,5 +1056,37 @@ section {
     .heading-title {
         /* Ajusta el tamaño del título para adaptarse a la pantalla pequeña */
         font-size: 3.5rem;
+    }
+}
+
+/* ---- FORMULARIO USUARIO-------- */
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    .form-container {
+        flex-direction: column; /* Acomoda los inputs en una sola columna */
+    }
+    
+    .inputBox {
+        flex: 1 1 100%; /* Los inputs ocupan todo el ancho disponible */
+    }
+    
+    .btn {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 450px) {
+    .form-section {
+        padding: 2rem 1rem;
+    }
+    
+    .inputBox input {
+        font-size: 1.4rem;
+        padding: 1rem;
+    }
+    
+    .btn {
+        font-size: 1.4rem;
     }
 }
