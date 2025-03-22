@@ -64,7 +64,10 @@ html::-webkit-scrollbar-thumb {
     background-color: var(--white);
 }
 
-/* Sección general para todas las etiquetas <section> */
+
+
+/* SECCION PARA TODAS LAS ETIQUETAS <section> */
+
 section {
     /* Espaciado interno: 5rem en vertical y 10px en horizontal */
     padding: 5rem 10px;
@@ -110,7 +113,9 @@ section {
     text-shadow: var(--box-shadow);
 }
 
-/* Estilos para botones genéricos */
+
+/* ESTILOS PARA LOS BOTONES GENÉRICOS */
+
 .btn {
     /* Se comporta como un elemento en línea con posibilidad de definir ancho y alto */
     display: inline-block;
@@ -134,7 +139,9 @@ section {
     background: var(--main-color);
 }
 
-/* Estilo para títulos secundarios de secciones */
+
+/* ESTILO PARA LOS TITULOS SECUNDARIOS DE SECCIONES */
+
 .heading-title {
     /* Alinea el texto al centro */
     text-align: center;
@@ -148,7 +155,9 @@ section {
     color: var(--black);
 }
 
-/* Estilos para la cabecera (header) de la página */
+
+/* ESTILOS PARA LA CABECERA (HEADER) DE LA PÁGINA */
+
 .header {
    /* Posiciona el header de forma sticky para que se mantenga visible al hacer scroll */
    position: sticky;
@@ -208,7 +217,9 @@ section {
     display: none;
 }
 
-/* Sección "home" (página principal) */
+
+/* --------SECCIÓN HOME ----------- */
+
 .home {
     /* Elimina cualquier padding para ocupar el ancho completo */
     padding: 0;
@@ -319,7 +330,8 @@ section {
     right: 7rem;
 }
 
-/* Estilos para la sección de servicios */
+/* ESTILOS PARA LA SECCIÓN DE SERVICIOS */
+
 .services .box-container {
     /* Se utiliza grid para organizar las cajas de servicios */
     display: grid;
@@ -365,7 +377,9 @@ section {
     padding-top: 1rem;
 }
 
-/* Sección "home-about" para presentar información de la empresa o similar */
+
+/* SECCION HOME-ABOUT */
+
 .home-about {
     /* Usa flexbox para distribuir imagen y contenido uno al lado del otro */
     display: flex;
@@ -413,7 +427,8 @@ section {
     color: var(--black);
 }
 
-/* Sección "home-packages" que muestra paquetes o servicios destacados */
+
+/* SECCION HOME PACKAGES */
 .home-packages {
     /* Fondo claro para diferenciar la sección */
     background: var(--light-bg);
@@ -531,7 +546,9 @@ section {
     margin-top: 2rem;
 }
 
-/* Sección de oferta especial en la página principal */
+
+/* SECCION OFERTA */
+
 .home-offer {
     text-align: center;
 }
@@ -553,7 +570,9 @@ section {
     padding: 1rem 0;
 }
 
-/* Sección "about" para información acerca de la empresa o similar */
+
+/* SECCION ABOUT */
+
 .about {
     /* Usa flexbox para distribuir imagen y contenido */
     display: flex;
@@ -606,7 +625,53 @@ section {
     display: block;
 }
 
-/* Sección de reseñas de clientes */
+
+/* ---------ESTILOS BOOKING-LIST--------- */
+
+/* Estilo de la lista de reservas */
+.booking-list {
+    padding: 4rem 10px;
+    background-color: var(--light-bg);
+    border-radius: 0.5rem;
+    box-shadow: var(--box-shadow);
+    margin-top: 2rem;
+}
+
+/* Estilo del encabezado de la tabla */
+.reservas-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.reservas-table th,
+.reservas-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--light-black);
+}
+
+.reservas-table th {
+    background-color: var(--main-color);
+    color: var(--white);
+    text-transform: uppercase;
+}
+
+.reservas-table tr:hover {
+    background-color: var(--light-white);
+}
+
+/* Estilo para los mensajes cuando no hay reservas */
+.booking-list p {
+    font-size: 1.6rem;
+    color: var(--light-black);
+    text-align: center;
+    padding: 2rem;
+}
+
+
+
+/* SECCION RESEÑA DE CLIENTES */
+
 .reviews {
     background: var(--light-bg);
 }
@@ -781,7 +846,7 @@ section {
 
 
 
-/* Sección de reserva (booking) */
+/* ---------SECCION RESERVA (BOOKING)-----------*/
 .booking .booking-form {
     padding: 2rem;
     background: var(--light-bg);
@@ -821,7 +886,12 @@ section {
     margin-top: 2rem;
 }
 
-/* Estilos para el pie de página (footer) */
+
+/*-------ESTILOS PARA BOOKING-LIST (LISTADO DE RESERVAS)------ */
+
+
+
+/*-------- ESTILOS DEL FOOTER-------*/
 .footer {
     /* Fondo con imagen, que no se repite, se ajusta al tamaño del contenedor, centrada y con efecto fijo */
     background: url(../images/footer-bg.jpg) no-repeat;
@@ -855,6 +925,8 @@ section {
     /* Al pasar el mouse, aumenta el padding para crear un efecto de desplazamiento */
     padding-right: 2rem;
 }
+
+
 
 /* ===================================================== */
 /*                    MEDIA QUERIES                    */

@@ -3,7 +3,7 @@
 session_start();
 
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
-    header('location: home.php');
+    header('location: ../home.php');
     exit;
 }
 
@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
     // VALIDAR CREDENCIALES
     if (empty($email_error) && empty($password_error)) { // CORREGIDO
-        $sql = "SELECT id, usuario, email, contraseña FROM usuarios WHERE email = ?";
+        $sql = "SELECT id, usuario, email, contraseña, role_id FROM usuarios WHERE email = ?"; // Añadir role_id a la consulta
 
         if ($stmt = mysqli_prepare($link, $sql)) { // VERIFICAR QUE $stmt SE PREPARE CORRECTAMENTE
             mysqli_stmt_bind_param($stmt, "s", $param_email);
@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 mysqli_stmt_store_result($stmt);
 
                 if (mysqli_stmt_num_rows($stmt) == 1) {
-                    mysqli_stmt_bind_result($stmt, $id, $usuario, $email, $hashed_password);
+                    mysqli_stmt_bind_result($stmt, $id, $usuario, $email, $hashed_password, $role_id); // Añadir role_id a la recuperación de datos
                     if (mysqli_stmt_fetch($stmt)) {
                         if (password_verify($password, $hashed_password)) {
                             session_start();
@@ -46,8 +46,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                             $_SESSION["loggedin"] = true;
                             $_SESSION["id"] = $id;
                             $_SESSION["email"] = $email;
+                            $_SESSION["role_id"] = $role_id; // Almacenar role_id en la sesión
 
-                            header("location: home.php");
+                            header("location: ../home.php");
                             exit;
                         } else {
                             $password_error = "La contraseña que has introducido no es válida";
