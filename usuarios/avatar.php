@@ -51,21 +51,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['foto_perfil'])) {
         </div>
 
         <div class="inputBox" style="text-align: center;">
-            <span>Selecciona tu foto:</span>
+            <span style="font-size: 24px;">Selecciona tu foto:</span>
             <input type="file" name="foto_perfil" id="foto_perfil" accept="image/*" onchange="previewImage(event)">
         </div>
 
         <div style="text-align: center; margin-top: 1rem;">
             <input type="submit" value="Subir Foto" class="btn">
         </div>
-
-        <?php if (isset($mensaje)): ?>
-            <p style="text-align: center;"><?= $mensaje; ?></p>
-            <!-- Mostrar botón para regresar al formulario de usuario -->
-            <div style="text-align: center; margin-top: 1rem;">
+        <div style="text-align: center; margin-top: 1rem;">
                 <a href="user-form.php" class="btn">Volver al Formulario de Usuario</a>
             </div>
-        <?php endif; ?>
+        
     </form>
 </section>
 
