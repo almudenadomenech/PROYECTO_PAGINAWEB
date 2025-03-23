@@ -24,46 +24,54 @@ if ($result && mysqli_num_rows($result) > 0) {
 
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil del Usuario</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
+
 <body>
-    <?php include('../includes/navbar.php'); ?> <!-- Tu barra de navegación -->
+    <?php include('../includes/navbar.php'); ?> 
 
     <div class="heading" style="background:url(../images/user-list.jpg) no-repeat">
         <h1 style="font-size: 45px;">Perfil de Usuario</h1>
     </div>
 
-    <section class="profile">
-        <h1 class="heading-title">Mis Datos</h1>
+    <section class="profile-section"> 
+        
 
-        <div class="flex">
-            <div class="inputBox">
-                <span>Usuario:</span>
-                <p><?php echo htmlspecialchars($user['usuario']); ?></p>
+        <div class="profile-flex"> 
+            <!-- Foto de perfil a la izquierda -->
+            <div class="profile-image"> 
+
+                <?php if ($user['foto_perfil']): ?>
+                    <img src="<?php echo htmlspecialchars($user['foto_perfil']); ?>" alt="Foto de perfil">
+                <?php else: ?>
+                    <p>No se ha subido una foto de perfil.</p>
+                <?php endif; ?>
             </div>
-            <div class="inputBox">
-                <span>Apellidos:</span>
-                <p><?php echo htmlspecialchars($user['apellidos']); ?></p>
-            </div>
-            <div class="inputBox">
-                <span>Dirección:</span>
-                <p><?php echo htmlspecialchars($user['direccion']); ?></p>
-            </div>
-            <div class="inputBox">
-                <span>Teléfono:</span>
-                <p><?php echo htmlspecialchars($user['telefono']); ?></p>
-            </div>
-            <div class="inputBox">
-                <span>Email:</span>
-                <p><?php echo htmlspecialchars($user['email']); ?></p>
-            </div>
-            <div class="inputBox">
-                <span>Foto de Perfil:</span>
-                <img src="<?php echo htmlspecialchars($user['foto_perfil']); ?>" alt="Foto de perfil" style="width: 100px; height: 100px; border-radius: 50%;">
+
+            <!-- Datos del usuario en una tarjeta a la derecha -->
+            <div class="profile-card"> 
+                <div class="profile-inputBox"> 
+                    <h1 style="display: inline;"><?php echo htmlspecialchars($user['usuario']); ?></h1>
+                    <h1 style="display: inline; margin-left: 10px;"><?php echo htmlspecialchars($user['apellidos']); ?></h1>
+                </div>
+
+                <div class="profile-inputBox"> 
+                    <span>Dirección:</span>
+                    <p><?php echo htmlspecialchars($user['direccion']); ?></p>
+                </div>
+                <div class="profile-inputBox"> 
+                    <span>Teléfono:</span>
+                    <p><?php echo htmlspecialchars($user['telefono']); ?></p>
+                </div>
+                <div class="profile-inputBox"> 
+                    <span>Email:</span>
+                    <p><?php echo htmlspecialchars($user['email']); ?></p>
+                </div>
             </div>
         </div>
 
@@ -73,6 +81,7 @@ if ($result && mysqli_num_rows($result) > 0) {
         </div>
     </section>
 
-    <?php include('../includes/footer.php'); ?> <!-- Tu pie de página -->
+    <?php include('../includes/footer.php'); ?> 
 </body>
+
 </html>
