@@ -28,7 +28,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['foto_perfil'])) {
 }
 ?>
 
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -62,6 +61,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['foto_perfil'])) {
 
         <?php if (isset($mensaje)): ?>
             <p style="text-align: center;"><?= $mensaje; ?></p>
+            <!-- Mostrar botón para regresar al formulario de usuario -->
+            <div style="text-align: center; margin-top: 1rem;">
+                <a href="user-form.php" class="btn">Volver al Formulario de Usuario</a>
+            </div>
         <?php endif; ?>
     </form>
 </section>

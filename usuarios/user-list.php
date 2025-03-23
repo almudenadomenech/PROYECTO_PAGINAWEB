@@ -26,51 +26,59 @@ if (!$result) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Usuarios</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <!-- swiper css link -->
+    <linkrel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
+     <!-- font awesone cdn link  -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+<?php
+    include('../includes/navbar.php');
+?>
 
 <!-- Encabezado -->
-<section class="heading">
+<section class="heading-user-list" style="background:url(../images/user-list.jpg) no-repeat">
     <h1>Lista de Usuarios Registrados</h1>
 </section>
 
 <!-- Tabla de usuarios -->
 <section class="usuarios-list">
-    <table class="usuarios-table">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nombre</th>
-                <th>Apellidos</th>
-                <th>Email</th>
-                <th>Teléfono</th>
-                <th>Foto de Perfil</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php while ($user = mysqli_fetch_assoc($result)): ?>
-                <tr>
-                    <td><?= $user['id']; ?></td>
-                    <td><?= $user['usuario']; ?></td>
-                    <td><?= $user['apellidos']; ?></td>
-                    <td><?= $user['email']; ?></td>
-                    <td><?= $user['telefono']; ?></td>
-                    <td>
-                        <?php if (!empty($user['foto_perfil'])): ?>
-                            <img src="<?= $user['foto_perfil']; ?>" alt="Foto de perfil" style="width: 50px; height: 50px; border-radius: 50%;">
-                        <?php else: ?>
-                            <span>No tiene foto</span>
-                        <?php endif; ?>
-                    </td>
-                </tr>
-            <?php endwhile; ?>
-        </tbody>
-    </table>
+    <h1 class="heading-title">Lista de Usuarios</h1>
+
+    <div class="usuarios-container">
+        <?php while ($user = mysqli_fetch_assoc($result)): ?>
+            <div class="usuario-card">
+                <div class="foto">
+                    <?php if (!empty($user['foto_perfil'])): ?>
+                        <img src="<?= $user['foto_perfil']; ?>" alt="Foto de perfil" class="foto-perfil">
+                    <?php else: ?>
+                        <img src="../images/usuario-default.png" alt="Avatar predeterminado" class="foto-perfil">
+                    <?php endif; ?>
+                </div>
+                <h2><?= htmlspecialchars($user['usuario']); ?></h2>
+                <div class="acciones">
+                    <a href="detalles_usuario.php?id=<?= $user['id']; ?>" class="btn btn-detalles">Detalles</a>
+                    <a href="eliminar_usuario.php?id=<?= $user['id']; ?>" class="btn btn-eliminar" onclick="return confirm('¿Estás seguro de eliminar este usuario?');">Eliminar</a>
+                </div>
+            </div>
+        <?php endwhile; ?>
+    </div>
 </section>
 
+
+<!-- swiper js link  -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+     <script src="../js/script.js"></script>
 </body>
 </html>
+  <!-- seccion footer   -->
+  <?php
+    include('../includes/footer.php');
+?>
 
 <?php
 // Cerrar la conexión

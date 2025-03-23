@@ -15,7 +15,7 @@ if (session_status() == PHP_SESSION_NONE) {
         <a href="../paginas/acercaDe.php">Acerca de</a>
         <a href="../paginas/paquetes.php">Paquetes</a>
         <a href="../booking/booking.php">Booking</a>
-        <a href="../usuarios/user-form.php">Formulario usuarios</a>
+        <a href="../usuarios/perfil.php">Mi perfil</a>
 
         <?php
         // Verificar si el usuario está logueado
