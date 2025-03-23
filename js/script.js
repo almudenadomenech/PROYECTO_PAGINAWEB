@@ -1,13 +1,13 @@
 let menu = document.querySelector('#menu-btn');
 let navbar = document.querySelector('.header .navbar');
 
-// Menú toggle
+// Menú toggle (hamburguesa)
 menu.onclick = () => {
     menu.classList.toggle('fa-times');
     navbar.classList.toggle('active');
 };
 
-// Cerrar menú al hacer scroll
+// Cerrar el menú al hacer scroll
 window.onscroll = () => {
     menu.classList.remove('fa-times');
     navbar.classList.remove('active');
@@ -73,4 +73,27 @@ loadMoreBtn.onclick = () => {
 
 // Ejecutar la inicialización cuando se cargue la página
 window.addEventListener('load', initializePackages);
+
+// Función para alternar el menú desplegable del perfil
+function toggleDropdown() {
+    let dropdown = document.getElementById('dropdown-menu');
+    dropdown.classList.toggle('show');
+}
+
+// Función para alternar el menú desplegable del perfil
+function toggleDropdown() {
+    let dropdown = document.getElementById('dropdown-menu');
+    dropdown.classList.toggle('show');
+}
+
+// Cerrar el menú desplegable al hacer clic fuera de él
+window.onclick = function(event) {
+    let dropdown = document.getElementById('dropdown-menu');
+    // Si el clic no es dentro del perfil o del menú desplegable, lo cerramos
+    if (!event.target.matches('.profile-photo') && !event.target.matches('#dropdown-menu') && !event.target.matches('.dropdown-content')) {
+        if (dropdown.classList.contains('show')) {
+            dropdown.classList.remove('show');
+        }
+    }
+};
 

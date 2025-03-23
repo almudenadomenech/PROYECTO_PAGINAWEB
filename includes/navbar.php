@@ -21,6 +21,8 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
         $foto_perfil = $row['foto_perfil']; // Guardar la URL de la foto de perfil
     }
 }
+
+$foto_default = "../images/usuario-default.png"; // Foto de perfil por defecto
 ?>
 
 <section class="header">
@@ -33,31 +35,32 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
         <a href="../paginas/acercaDe.php">Acerca de</a>
         <a href="../paginas/paquetes.php">Paquetes</a>
         <a href="../booking/booking.php">Booking</a>
-        <a href="../usuarios/perfil.php">Mi perfil</a>
 
         <?php
         // Verificar si el usuario está logueado
         if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
-            // Si el usuario es administrador (role_id == 2)
+            // Si no hay foto de perfil, usar la foto por defecto
+            $foto_mostrar = !empty($foto_perfil) ? $foto_perfil : $foto_default;
+
+            echo '<div class="profile-dropdown">
+                    <a href="javascript:void(0)" class="profile-photo" onclick="toggleDropdown()">
+                        <img src="' . $foto_mostrar . '" alt="Foto de perfil" style="width: 40px; height: 40px; border-radius: 50%; margin-left: 10px;">
+                    </a>
+                    <div class="dropdown-content" id="dropdown-menu">
+                        <a href="../usuarios/perfil.php">Mi perfil</a>
+                        <a href="../booking/booking-list.php">Mis reservas</a>';
+
+            // Mostrar enlaces adicionales si el usuario es administrador
             if ($_SESSION['role_id'] == 2) {
                 echo '<a href="../usuarios/user-list.php">Lista de usuarios</a>';
                 echo '<a href="../booking/booking-list.php">Ver reservas</a>';
-            } else {
-                // Si es usuario normal
-                echo '<a href="../booking/booking-list.php">Mis reservas</a>';
             }
 
-            // Mostrar foto de perfil si existe
-            if (!empty($foto_perfil)) {
-                echo '<a href="../usuarios/perfil.php" class="profile-photo">
-                        <img src="' . $foto_perfil . '" alt="Foto de perfil" style="width: 40px; height: 40px; border-radius: 50%; margin-left: 10px;">
-                      </a>';
-            }
-
-            // Mostrar botón de cerrar sesión
-            echo '<a href="../conexiones/cerrar_sesion.php">Cerrar sesión</a>';
+            echo '<a href="../conexiones/cerrar_sesion.php">Cerrar sesión</a>
+                </div>
+            </div>';
         } else {
-            // Si no está logueado
+            // Si no está logueado, mostrar los enlaces de Login y Register
             echo '<a href="../paginas/login.php">Login</a>';
             echo '<a href="../paginas/register.php">Register</a>';
         }
@@ -66,3 +69,5 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
 
     <div id="menu-btn" class="fas fa-bars"></div>
 </section>
+
+<script src="../js/script.js"></script>

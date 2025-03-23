@@ -1,24 +1,31 @@
 <?php
 include('../includes/navbar.php');
-include('../includes/conexion.php'); // Asegúrate de que la conexión a la base de datos sea correcta
-include('booking-form.php');  // Incluye la lógica para procesar el formulario
-?>
-
-<?php
-
+include('../includes/conexion.php'); // Asegurar conexión con la base de datos
+include('booking-form.php');  // Procesa el formulario de reserva
 
 // Verificar si el usuario está logueado
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
-    // Si no está logueado, redirigir a la página de login
     header("Location: ../paginas/login.php");
     exit;
 }
+
+// Obtener ID del usuario logueado
+$user_id = $_SESSION['id'];
+
+// Consultar los datos del usuario en la base de datos
+$query = "SELECT usuario, email, telefono, direccion FROM usuarios WHERE id = $user_id";
+$result = mysqli_query($link, $query);
+
+if ($result && mysqli_num_rows($result) > 0) {
+    $user_data = mysqli_fetch_assoc($result);
+} else {
+    $user_data = ['usuario' => '', 'email' => '', 'telefono' => '', 'direccion' => ''];
+}
+
 ?>
 
-<!-- swiper css link -->
+<!-- Estilos y scripts -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-
-<!-- font awesome cdn link -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="../css/style.css">
 
@@ -34,22 +41,22 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
         <div class="flex">
             <div class="inputBox">
                 <span>Nombre:</span>
-                <input type="text" placeholder="Introduce tu nombre" name="name">
+                <input type="text" placeholder="Introduce tu nombre" name="name" value="<?= htmlspecialchars($user_data['usuario']) ?>">
             </div>
 
             <div class="inputBox">
                 <span>Email:</span>
-                <input type="email" placeholder="Introduce tu email" name="email">
+                <input type="email" placeholder="Introduce tu email" name="email" value="<?= htmlspecialchars($user_data['email']) ?>">
             </div>
 
             <div class="inputBox">
                 <span>Teléfono:</span>
-                <input type="number" placeholder="Introduce tu teléfono" name="phone">
+                <input type="number" placeholder="Introduce tu teléfono" name="phone" value="<?= htmlspecialchars($user_data['telefono']) ?>">
             </div>
 
             <div class="inputBox">
                 <span>Dirección:</span>
-                <input type="text" placeholder="Introduce tu dirección" name="address">
+                <input type="text" placeholder="Introduce tu dirección" name="address" value="<?= htmlspecialchars($user_data['direccion']) ?>">
             </div>
 
             <div class="inputBox">
@@ -77,12 +84,10 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     </form>
 </section>
 
-<!-- Sección de footer -->
-<?php
-include('../includes/footer.php');
-?>
+<!-- Footer -->
+<?php include('../includes/footer.php'); ?>
 
-<!-- swiper js link -->
+<!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="../js/script.js"></script>
 

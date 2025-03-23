@@ -64,6 +64,77 @@ html::-webkit-scrollbar-thumb {
     background-color: var(--white);
 }
 
+/* ---------------SECCION NAVBAR (DESPLEGABLE) ---------- */
+/* Estilo para el menú desplegable */
+.profile-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+    top: 50px; /* Ajusta según el espacio necesario */
+    right: 0;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 12px !important;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.show {
+    display: block;
+}
+/* Estilos para la imagen de perfil en el navbar */
+/* Contenedor de la imagen de perfil */
+.profile-photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px; /* Manteniendo las medidas originales */
+    height: 45px;
+    border-radius: 50%; /* Redondeado */
+    padding: 3px; /* Espacio entre la imagen y el borde */
+    border: 2px solid transparent; /* Borde inicial */
+    
+    /* Gradiente en el borde */
+    background-image: linear-gradient(45deg, rgba(142, 68, 173, 0.8), rgba(142, 68, 173, 0.5));
+    background-origin: border-box;
+    background-clip: content-box, border-box; /* Asegura que el gradiente quede solo en el borde */
+
+    /* Sombra luminosa */
+    box-shadow: 0 0 10px rgba(142, 68, 173, 0.5), 0 0 15px rgba(142, 68, 173, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Estilo para la imagen dentro del contenedor */
+.profile-photo img {
+    width: 100%; /* Se ajusta automáticamente dentro del contenedor */
+    height: 100%;
+    border-radius: 50%; /* Mantiene la forma circular */
+    object-fit: cover; /* Evita que la imagen se deforme */
+}
+
+/* Efecto hover para resaltar la imagen */
+.profile-photo:hover {
+    transform: scale(1.1); /* Efecto de crecimiento */
+    box-shadow: 0 0 15px rgba(142, 68, 173, 0.8), 0 0 20px rgba(142, 68, 173, 0.5);
+}
+
+
 
 
 /* SECCION PARA TODAS LAS ETIQUETAS <section> */
@@ -450,6 +521,7 @@ section {
 .packages .box-container .box .content .btn-reservar,
 .home-about .content .btn-reservar {
     margin-top: auto;       /* Empuja el botón hacia el final del contenedor */
+    
 }
 
 /* Contenedor de cajas de paquetes en la sección "home-packages" */
@@ -626,49 +698,6 @@ section {
 }
 
 
-/* ---------ESTILOS BOOKING-LIST--------- */
-
-/* Estilo de la lista de reservas */
-.booking-list {
-    padding: 4rem 10px;
-    background-color: var(--light-bg);
-    border-radius: 0.5rem;
-    box-shadow: var(--box-shadow);
-    margin-top: 2rem;
-}
-
-/* Estilo del encabezado de la tabla */
-.reservas-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.reservas-table th,
-.reservas-table td {
-    padding: 1rem;
-    text-align: left;
-    border-bottom: 1px solid var(--light-black);
-}
-
-.reservas-table th {
-    background-color: var(--main-color);
-    color: var(--white);
-    text-transform: uppercase;
-}
-
-.reservas-table tr:hover {
-    background-color: var(--light-white);
-}
-
-/* Estilo para los mensajes cuando no hay reservas */
-.booking-list p {
-    font-size: 1.6rem;
-    color: var(--light-black);
-    text-align: center;
-    padding: 2rem;
-}
-
-
 
 /* SECCION RESEÑA DE CLIENTES */
 
@@ -839,13 +868,6 @@ section {
 
 
 
-
-
-
-
-
-
-
 /* ---------SECCION RESERVA (BOOKING)-----------*/
 .booking .booking-form {
     padding: 2rem;
@@ -886,8 +908,52 @@ section {
     margin-top: 2rem;
 }
 
+/* ---------ESTILOS BOOKING-LIST--------- */
 
-/*-------ESTILOS PARA BOOKING-LIST (LISTADO DE RESERVAS)------ *
+/* Estilo de la lista de reservas */
+.booking-list {
+    padding: 4rem 10px;
+    background-color: var(--light-bg);
+    border-radius: 0.5rem;
+    box-shadow: var(--box-shadow);
+    margin-top: 2rem;
+}
+
+/* Estilo del encabezado de la tabla */
+.reservas-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.reservas-table th,
+.reservas-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--light-black);
+}
+
+.reservas-table th {
+    background-color: var(--main-color);
+    color: var(--white);
+    text-transform: uppercase;
+}
+
+.reservas-table tr:hover {
+    background-color: var(--light-white);
+}
+
+/* Estilo para los mensajes cuando no hay reservas */
+.booking-list p {
+    font-size: 1.6rem;
+    color: var(--light-black);
+    text-align: center;
+    padding: 2rem;
+}
+
+
+
+
+/*-------ESTILOS PARA USER-LIST (LISTADO DE USUARIOS)------ *
 
 
 /* Estilo para la sección de encabezado de la lista de usuarios */
@@ -1015,6 +1081,137 @@ section {
     background-color: #c0392b;
 }
 
+
+
+
+/* ----------------PERFIL DE USUARIO-------------------- */
+
+/* Estructura de la imagen y los datos */
+.profile-flex { 
+    /* Activa el modelo de diseño Flexbox para alinear los elementos en fila */
+    display: flex;  
+    align-items: center; /* Alinea los elementos hijos verticalmente al centro */
+    gap: 30px; /* Espacio de 30px entre los elementos dentro del contenedor */
+    margin-left: 50px; /* Desplaza todo el contenido hacia la derecha con un margen de 50px */
+}
+
+/* Estilo para la imagen de perfil */
+.profile-image {
+    flex-shrink: 0; /* Evita que la imagen se reduzca si el espacio es limitado */
+    width: 300px; /* Establece un ancho fijo para la imagen */
+    height: 300px; /* Establece una altura fija para la imagen */
+    display: flex; /* Usa Flexbox dentro del contenedor de la imagen */
+    justify-content: center; /* Centra la imagen horizontalmente dentro del contenedor */
+    align-items: center; /* Centra la imagen verticalmente dentro del contenedor */
+    border: 2px solid var(--main-color); /* Borde de color principal de la página */
+    padding: 10px; /* Espacio entre la imagen y el borde */
+    border-radius: 5px; /* Bordes redondeados para el contenedor */
+    
+    /* Gradiente en el borde usando tonos morados */
+    border: 2px solid transparent; 
+    background-image: linear-gradient(45deg, rgba(142, 68, 173, 0.6), rgba(142, 68, 173, 0.4)); 
+    background-origin: border-box; /* Aplica el gradiente al borde */
+    background-clip: content-box, border-box; /* Asegura que el gradiente quede solo en el borde */
+
+    /* Efecto de sombra luminosa */
+    box-shadow: 0 0 15px rgba(142, 68, 173, 0.6), 0 0 20px rgba(142, 68, 173, 0.4); 
+}
+
+/* Estilo para la tarjeta que contiene los datos del usuario */
+.profile-card { 
+    background-color:transparent; /* Fondo blanco para la tarjeta */
+    padding: 20px; /* Espacio interior de 20px alrededor del contenido */
+    border-radius:none; /* Bordes redondeados para la tarjeta */
+   
+    width: 100%; /* Hace que la tarjeta ocupe todo el ancho disponible */
+    margin-left: 250px; /* Desplaza la tarjeta hacia la derecha con un margen de 250px */
+    margin-top: 20px;
+}
+
+/* Estilo para las cajas de entrada dentro de la tarjeta */
+.profile-card .profile-inputBox { 
+    margin-bottom: 15px; /* Espacio de 15px debajo de cada caja de entrada */
+    width: 100%; /* Hace que las cajas de entrada ocupen todo el ancho disponible */
+    display: flex; /* Usa Flexbox para alinear los elementos dentro de la caja */
+    align-items: center; /* Alinea verticalmente los elementos dentro de la caja */
+}
+
+/* Estilo para los títulos de usuario (usuario y apellidos) */
+.profile-card .profile-inputBox h1 { 
+    font-size: 3.5rem; /* Tamaño de la fuente para el nombre */
+    color: var(--main-color); /* Color principal de la página */
+    margin-left: 50px; /* Espacio de 30px a la izquierda del título */
+    margin-bottom: 15px; /*Espacion de 15px de abajo*/
+}
+
+/* Estilo para los labels dentro de las cajas de entrada */
+.profile-card .profile-inputBox span { 
+    font-weight: bold; /* Hace que el texto sea negrita */
+    display: block; /* Hace que el texto ocupe todo el espacio disponible */
+    margin-bottom: 5px; /* Espacio de 5px debajo del texto */
+    color: #000000; /* Color negro para el texto */
+    font-size: 22px; /* Tamaño de la fuente */
+    margin-top: 15px; /* Espacio de 15px encima del texto */
+}
+
+/* Estilo para los párrafos dentro de las cajas de entrada */
+.profile-card .profile-inputBox p { 
+    margin: 0; /* Elimina los márgenes por defecto */
+    font-size: 18px; /* Tamaño de la fuente */
+    color: #000000; /* Color negro para el texto */
+    margin-left: 15px; /* Espacio de 15px a la izquierda */
+    margin-top: 15px; /* Espacio de 15px encima del párrafo */
+}
+
+/* Estilo para los labels fuera de la tarjeta */
+.profile-inputBox span {
+    color: #333; /* Color gris oscuro */
+    font-size: 1.1rem; /* Tamaño de la fuente ligeramente mayor */
+}
+
+/* Estilo para los párrafos fuera de la tarjeta */
+.profile-inputBox p {
+    font-size: 1rem; /* Tamaño de la fuente */
+    color: #555; /* Color gris más claro */
+    margin: 5px 0; /* Márgenes de 5px arriba y abajo */
+}
+
+/* Estilo para la imagen de perfil */
+.profile-image img { 
+    width: 100%; /* Hace que la imagen ocupe todo el ancho disponible */
+    height: 100%; /* Hace que la imagen ocupe todo el alto disponible */
+    object-fit: cover; /* Ajusta la imagen para cubrir todo el área sin distorsionarla */
+    border-radius: 10px; /* Bordes redondeados para la imagen */
+}
+
+/* Estilos generales para las cajas de entrada */
+.profile-inputBox span {
+    color: #333; /* Color gris oscuro */
+    font-size: 1.1rem; /* Tamaño de la fuente */
+}
+
+.profile-inputBox p {
+    font-size: 1rem; /* Tamaño de la fuente */
+    color: #555; /* Color gris claro */
+    margin: 5px 0; /* Márgenes de 5px arriba y abajo */
+}
+
+
+
+
+
+
+/* Estilo para la tarjeta y sus contenidos */
+.inputBox span {
+    color: #333;
+    font-size: 1.1rem;
+}
+
+.inputBox p {
+    font-size: 1rem;
+    color: #555;
+    margin: 5px 0;
+}
 
 
 
@@ -1169,5 +1366,67 @@ section {
     
     .btn {
         font-size: 1.4rem;
+    }
+}
+
+/* ------MI PERFIL-------- */
+/* Media Query para pantallas de 768px o menos (tabletas y móviles en orientación horizontal) */
+@media (max-width: 768px) {
+    .profile-flex {
+        flex-direction: column; /* Cambia la dirección del Flexbox para apilar los elementos verticalmente */
+        margin-left: 20px; /* Menos margen en pantallas más pequeñas */
+        gap: 20px; /* Reduce el espacio entre los elementos */
+    }
+
+    .profile-card {
+        margin-left: 0; /* Elimina el margen izquierdo para pantallas pequeñas */
+        padding: 15px; /* Menos relleno en pantallas más pequeñas */
+    }
+
+    .profile-image {
+        width: 200px; /* Reducción del tamaño de la imagen */
+        height: 200px; /* Reducción del tamaño de la imagen */
+    }
+
+    .profile-card .profile-inputBox h1 {
+        font-size: 2rem; /* Reducción del tamaño de los títulos */
+    }
+
+    .profile-card .profile-inputBox span {
+        font-size: 16px; /* Reducción del tamaño de la fuente de los labels */
+    }
+
+    .profile-card .profile-inputBox p {
+        font-size: 14px; /* Reducción del tamaño de la fuente de los párrafos */
+    }
+}
+
+/* Media Query para pantallas de 480px o menos (móviles en orientación vertical) */
+@media (max-width: 480px) {
+    .profile-flex {
+        margin-left: 10px; /* Menos margen en pantallas muy pequeñas */
+        gap: 15px; /* Reduce aún más el espacio entre los elementos */
+    }
+
+    .profile-image {
+        width: 180px; /* Imagen aún más pequeña en dispositivos muy pequeños */
+        height: 180px; /* Imagen aún más pequeña en dispositivos muy pequeños */
+    }
+
+    .profile-card {
+        margin-left: 0; /* Elimina el margen izquierdo */
+        padding: 10px; /* Reduce el relleno de la tarjeta */
+    }
+
+    .profile-card .profile-inputBox h1 {
+        font-size: 1.5rem; /* Disminuye aún más el tamaño del nombre */
+    }
+
+    .profile-card .profile-inputBox span {
+        font-size: 14px; /* Disminuye el tamaño de los labels */
+    }
+
+    .profile-card .profile-inputBox p {
+        font-size: 12px; /* Disminuye el tamaño de los párrafos */
     }
 }

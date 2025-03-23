@@ -1,5 +1,5 @@
 <?php
-include('../includes/navbar.php'); 
+include('../includes/navbar.php');
 include('../includes/conexion.php'); // Conexión a la base de datos
 
 // Iniciar sesión
@@ -9,7 +9,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 }
 
 // Obtener datos del usuario logueado
-$user_id = $_SESSION['id']; 
+$user_id = $_SESSION['id'];
 $query = "SELECT * FROM usuarios WHERE id = '$user_id'";
 $result = mysqli_query($link, $query);
 
@@ -23,12 +23,14 @@ if ($result && mysqli_num_rows($result) > 0) {
 
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de Usuario</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
+
 <body>
     <div class="heading" style="background:url(../images/user-list.jpg) no-repeat">
         <h1 style="font-size: 45px;">Formulario de Usuario</h1>
@@ -71,14 +73,15 @@ if ($result && mysqli_num_rows($result) > 0) {
 
             <input type="hidden" name="user_id" value="<?= $user['id']; ?>">
 
-            <input type="submit" value="Actualizar" class="btn">
+            <div class="button-container">
+                <input type="submit" value="Actualizar" class="btn">
+                <a href="avatar.php" class="btn">Subir Foto</a>
+            </div>
 
-            <div style="text-align: center; margin-top: 1rem;">
-        <a href="avatar.php" class="btn" style="margin-bottom: 1rem;">Subir Foto</a>
-    </div>
         </form>
     </section>
 
     <?php include('../includes/footer.php'); ?>
 </body>
+
 </html>
