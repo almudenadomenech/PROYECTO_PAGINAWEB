@@ -1,7 +1,9 @@
 /* Se importa la fuente "Montserrat" desde Google Fonts, incluyendo variantes de estilo normal e itálico con diferentes pesos */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-/* Definición de variables globales (custom properties) que se podrán reutilizar en todo el CSS */
+
+/* DEFINICION DE VARIABLES GLOBALES RETURILIZABLES EN TODO EL CSS */
+
 :root {
     /* Color principal del tema */
     --main-color: #8e44ad;
@@ -25,7 +27,10 @@
     --text-shadow: 0 1.5rem 3rem rgba(0,0,0, .3);
 }
 
-/* Estilos globales para todos los elementos del documento */
+
+
+/* ESTILOS GLOBALES PARA TODOS LOS ELEMENTOS DEL DOCUMENTO */
+
 * {
     /* Se asigna la fuente Montserrat; en caso de no cargar se usará una fuente serif */
     font-family: "Montserrat", serif;
@@ -43,14 +48,18 @@
 
 
 
-/* Estilos para el elemento raíz html */
+/* ESTILOS PARA EL ELEMENTOS RAIZ HTML */
+
 html {
     /* Se establece un tamaño base de fuente de 62.5% para facilitar el uso de rem (1rem = 10px aproximadamente) */
     font-size: 62.5%;
     /* overflow: hidden;  --> Comentado: serviría para ocultar desbordamientos, pero se encuentra inactivo */
 }
 
-/* Personalización de la barra de desplazamiento en navegadores basados en WebKit */
+
+
+/* PERSONALIZACION DE LA BARRA DE DESPLAZAMIENTO EN NAVEGADORES BASADO EN WEBKIT */
+
 html::-webkit-scrollbar {
     /* Ancho de la scrollbar */
     width: 1rem;
@@ -64,7 +73,10 @@ html::-webkit-scrollbar-thumb {
     background-color: var(--white);
 }
 
+
+
 /* ---------------SECCION NAVBAR (DESPLEGABLE) ---------- */
+
 /* Estilo para el menú desplegable */
 .profile-dropdown {
     position: relative;
@@ -98,8 +110,10 @@ html::-webkit-scrollbar-thumb {
 .show {
     display: block;
 }
+
 /* Estilos para la imagen de perfil en el navbar */
 /* Contenedor de la imagen de perfil */
+
 .profile-photo {
     display: flex;
     justify-content: center;
@@ -154,7 +168,9 @@ section {
     /* Se omite el 100% ya que se asume que el navegador lleva el elemento a su estado natural (escala 1 y opacidad 1) */
 }
 
-/* Estilos para el encabezado (header) grande, generalmente usado en la parte superior de una sección */
+
+/* ESTILOS PARA EL ENCABEZADO (header) GRANDE, PARTE SUPERIOR DE LA SECCION */
+
 .heading {
    /* Asegura que el fondo cubra todo el contenedor */
    background-size: cover !important;
@@ -172,7 +188,9 @@ section {
    justify-content: center;
 }
 
-/* Estilos para el título principal dentro del encabezado */
+
+/* ESTILOS PARA EL TITULO PRINCIPAL DENTRO DEL ENCABEZADO */
+
 .heading h1 {
     /* Tamaño muy grande para resaltar el título */
     font-size: 10rem;
@@ -183,6 +201,7 @@ section {
     /* Aplica sombra de texto para efecto de profundidad, reutilizando la variable de box-shadow */
     text-shadow: var(--box-shadow);
 }
+
 
 
 /* ESTILOS PARA LOS BOTONES GENÉRICOS */
@@ -276,7 +295,9 @@ section {
     color: var(--main-color);
 }
 
-/* Estilos para el botón de menú (icono) que aparece en dispositivos móviles */
+
+/* ESTILOS PARA EL BOTON DE MENU QUE APARECE EN DISPOSITIVOS MOVILES */
+
 #menu-btn {
     /* Tamaño de fuente para el icono */
     font-size: 2.5rem;
@@ -289,7 +310,8 @@ section {
 }
 
 
-/* --------SECCIÓN HOME ----------- */
+
+/* ------------------SECCIÓN HOME ---------------- */
 
 .home {
     /* Elimina cualquier padding para ocupar el ancho completo */
@@ -401,6 +423,8 @@ section {
     right: 7rem;
 }
 
+
+
 /* ESTILOS PARA LA SECCIÓN DE SERVICIOS */
 
 .services .box-container {
@@ -500,6 +524,7 @@ section {
 
 
 /* SECCION HOME PACKAGES */
+
 .home-packages {
     /* Fondo claro para diferenciar la sección */
     background: var(--light-bg);
@@ -741,6 +766,8 @@ section {
     margin-top: 1rem;
 }
 
+
+
 /* ------------------PAQUETES---------------- */
 
 /* Contenedor principal de la sección de paquetes */
@@ -868,7 +895,8 @@ section {
 
 
 
-/* ---------SECCION RESERVA (BOOKING)-----------*/
+/* -----------------PAGINA DE BOOKING---------------*/
+
 .booking .booking-form {
     padding: 2rem;
     background: var(--light-bg);
@@ -908,46 +936,201 @@ section {
     margin-top: 2rem;
 }
 
-/* ---------ESTILOS BOOKING-LIST--------- */
 
-/* Estilo de la lista de reservas */
-.booking-list {
-    padding: 4rem 10px;
-    background-color: var(--light-bg);
-    border-radius: 0.5rem;
-    box-shadow: var(--box-shadow);
-    margin-top: 2rem;
+/* ---CUADRO DE MENSAJE--- */
+
+/* Estilos para el modal */
+
+#modal-message {
+    display: none; /* Por defecto, el modal está oculto */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Para centrar el modal en la pantalla */
+    background-color: var(--main-color);
+    padding: 60px; /* Aumentar el padding para hacerlo más grande */
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    z-index: 1000;
+    width: 60%; /* Por defecto el modal ocupa el 60% del ancho */
+    height: auto; /* La altura se ajustará automáticamente al contenido */
+    max-width: 600px; /* Máximo ancho para el modal */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Alinea el contenido verticalmente */
+    overflow: hidden; /* Evita que el contenido se desborde */
 }
 
-/* Estilo del encabezado de la tabla */
-.reservas-table {
+/* Estilo para el título */
+#modal-message h2 {
+    font-size: 24px; /* Aumentar el tamaño de la fuente del mensaje */
+    margin-bottom: 40px; /* Aumenta el espacio entre el mensaje y el botón */
+   
+}
+
+/* Estilo del botón */
+#modal-message button {
+    padding: 1.5rem 3rem; /* Aumentar el padding para hacer el botón más grande */
+    background-color: var(--black);
+    color: var(--white);
+    text-transform: capitalize;
+    border-radius: 8px; /* Hacer el botón más redondeado */
+    text-decoration: none;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Añadir un poco más de sombra */
+    transition: background-color 0.3s ease;
+    font-size: 18px; /* Aumentar el tamaño de la fuente del botón */
+}
+
+/* Hover en el botón */
+#modal-message button:hover {
+    background-color: white;
+    color: black;
+}
+
+
+
+/*--------------- ESTILOS BOOKING-LIST ---------------*/
+/* Estilos comunes para las tablas en toda la aplicación */
+
+h1 {
+    text-align: center;
+    margin-top: 30px; /* Espacio desde el top */
+    padding-top: 20px;
+    font-size: 3.5rem;
+    color: var(--black);
+}
+
+table {
     width: 100%;
+    margin-top: 3.5rem;
+    margin-bottom: 4rem;
     border-collapse: collapse;
 }
 
-.reservas-table th,
-.reservas-table td {
+table th,
+table td {
     padding: 1rem;
-    text-align: left;
-    border-bottom: 1px solid var(--light-black);
-}
-
-.reservas-table th {
-    background-color: var(--main-color);
-    color: var(--white);
-    text-transform: uppercase;
-}
-
-.reservas-table tr:hover {
-    background-color: var(--light-white);
-}
-
-/* Estilo para los mensajes cuando no hay reservas */
-.booking-list p {
-    font-size: 1.6rem;
-    color: var(--light-black);
     text-align: center;
-    padding: 2rem;
+    border-bottom: 1px solid #ccc;
+    font-size: 1.5rem; /* Aumenta el tamaño de la fuente dentro de las celdas */
+}
+
+table th {
+    background-color: var(--main-color); /* Asegúrate de que esta variable esté definida */
+    color: #fff;
+    padding: 2rem 3rem;  /* Aumentamos el relleno horizontal para hacerlo más ancho */
+    font-size: 16px;
+}
+
+table tr:nth-child(even) {
+    background-color: var(--light-bg); /* Fondo alterno para las filas */
+}
+
+/* Agregar un pequeño efecto de hover en las filas */
+table tr:hover {
+    background-color: var(--hover-bg, #f1f1f1); /* Fondo de hover */
+}
+
+/* Estilo específico para la columna de ID */
+table td:nth-child(1), table th:nth-child(1) {
+    padding-left: 20px; /* Añadir un pequeño relleno a la izquierda de la columna de ID */
+}
+/* Estilo para el botón de eliminar */
+.btn-eliminar {
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    background: linear-gradient(45deg, #e74c3c, #c0392b); /* Gradiente rojo */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.4s ease, transform 0.3s ease;
+}
+
+/* Efecto de hover */
+.btn-eliminar:hover {
+    background: linear-gradient(45deg, #c0392b, #e74c3c); /* Gradiente invertido en hover */
+    transform: scale(1.1); /* Agrandar el botón al pasar el ratón */
+}
+
+/* Efecto de foco */
+.btn-eliminar:focus {
+    outline: none;
+    box-shadow: 0 0 8px rgba(231, 76, 60, 0.8); /* Sombra más fuerte al hacer foco */
+}
+
+
+
+/*------- Modal general------ */
+.modal {
+    display: none; /* Ocultar por defecto */
+    position: fixed;
+    z-index: 1000; /* Asegúrate de que el modal esté por encima de otros elementos */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4); /* Fondo oscuro con opacidad */
+}
+
+/* Contenido del modal */
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centrado en la pantalla */
+    width: 80%; /* Ajustamos el ancho del modal (puedes cambiarlo si lo deseas) */
+    max-width: 700px; /* Máximo tamaño para el modal */
+    padding: 40px; /* Aumentar el padding para hacerlo más grande */
+    background-color: var(--main-color);
+    border-radius: 10px; /* Bordes redondeados */
+    box-sizing: border-box;
+    text-align: center; /* Centrar el contenido dentro del modal */
+}
+
+/* Estilo para el título */
+.modal-content h3 {
+    font-size: 28px; /* Aumentar el tamaño de la fuente */
+    margin-bottom: 20px; /* Separar el título de los botones */
+    color: white;
+}
+
+/* Estilo de los botones */
+.modal-content button {
+    padding: 15px 30px; /* Botones más grandes */
+    background-color: var(--black); /* Color de fondo del botón */
+    color: white; /* Color de texto del botón */
+    text-transform: capitalize;
+    border-radius: 8px; /* Bordes redondeados en el botón */
+    border: none;
+    font-size: 18px; /* Aumentar tamaño del texto */
+    margin: 10px; /* Espacio entre los botones */
+    cursor: pointer;
+}
+
+/* Efecto hover para los botones */
+.modal-content button:hover {
+    background-color: white; /* Fondo blanco al pasar el mouse */
+    color: black; /* Color de texto negro */
+}
+
+/* Estilo del botón de cerrar */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
 }
 
 
