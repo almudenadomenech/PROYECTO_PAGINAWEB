@@ -80,11 +80,6 @@ function toggleDropdown() {
     dropdown.classList.toggle('show');
 }
 
-// Función para alternar el menú desplegable del perfil
-function toggleDropdown() {
-    let dropdown = document.getElementById('dropdown-menu');
-    dropdown.classList.toggle('show');
-}
 
 // Cerrar el menú desplegable al hacer clic fuera de él
 window.onclick = function(event) {
