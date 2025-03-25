@@ -23,7 +23,12 @@
 <?php
 
 
-    
+    // Verifica que el usuario esté logueado
+    // session_start();
+    // if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    //     header("Location: login.php");
+    //     exit;
+    // }
 
     // Obtener el rol del usuario
     $role_id = $_SESSION['role_id'];
