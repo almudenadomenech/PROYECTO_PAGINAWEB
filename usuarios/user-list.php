@@ -1,8 +1,8 @@
 <?php
+ include('../includes/navbar.php');
 include('../includes/conexion.php'); // Conexión a la base de datos
 
-// Iniciar sesión
-session_start();
+
 
 // Verificar si el usuario está logueado y si es un administrador
 if (!isset($_SESSION['id']) || $_SESSION['role_id'] != 2) { // Cambié 'rol' por 'role_id' para ser consistente
@@ -35,9 +35,7 @@ if (!$result) {
      <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-<?php
-    include('../includes/navbar.php');
-?>
+
 
 <!-- Encabezado -->
 <section class="heading-user-list" style="background:url(../images/user-list.jpg) no-repeat">
