@@ -47,40 +47,13 @@ también compiamos el link para js.
 08 - https://pngtree.com/
 09 - https://www.pngegg.com/
 
-## MODIFICACION DE LA TABLA DE USUARIOS
+### PARA PODER HACER LOS COMMIT EN CLASE
 
-ALTER TABLE usuarios
-ADD usuario VARCHAR(255) NOT NULL, /* Por si no está incluido */
-ADD apellidos VARCHAR(255) NOT NULL,
-ADD direccion VARCHAR(255) NOT NULL,
-ADD telefono VARCHAR(20) NOT NULL,
-ADD foto_perfil VARCHAR(255);
+git add usuarios/guardar_datos.php
+git add usuarios/user-list.php
 
 
-## MODIFICAR EL ORDEN DE LOS CAMPOS EN UNA TABLA
-ALTER TABLE usuarios
-MODIFY id INT NOT NULL FIRST;
+git commit -m "Descripción de los cambios realizados"
 
-ALTER TABLE usuarios
-MODIFY usuario VARCHAR(255) NOT NULL AFTER id;
 
-ALTER TABLE usuarios
-MODIFY email VARCHAR(255) NOT NULL AFTER usuario;
-
-ALTER TABLE usuarios
-MODIFY contraseña VARCHAR(255) NOT NULL AFTER email;
-
-ALTER TABLE usuarios
-MODIFY role_id INT NOT NULL AFTER contraseña;
-
-ALTER TABLE usuarios
-MODIFY apellidos VARCHAR(255) NOT NULL AFTER role_id;
-
-ALTER TABLE usuarios
-MODIFY direccion VARCHAR(255) NOT NULL AFTER apellidos;
-
-ALTER TABLE usuarios
-MODIFY telefono VARCHAR(20) NOT NULL AFTER direccion;
-
-ALTER TABLE usuarios
-MODIFY foto_perfil VARCHAR(255) AFTER telefono;
+git push origin main
