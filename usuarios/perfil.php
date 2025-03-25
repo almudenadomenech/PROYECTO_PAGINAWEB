@@ -45,13 +45,13 @@ if ($result && mysqli_num_rows($result) > 0) {
         <div class="profile-flex"> 
             <!-- Foto de perfil a la izquierda -->
             <div class="profile-image"> 
+    <?php if ($user['foto_perfil']): ?>
+        <img src="<?php echo htmlspecialchars($user['foto_perfil']); ?>" alt="Foto de perfil">
+    <?php else: ?>
+        <img src="../images/usuario-default.png" alt="Foto de perfil predeterminada">
+    <?php endif; ?>
+</div>
 
-                <?php if ($user['foto_perfil']): ?>
-                    <img src="<?php echo htmlspecialchars($user['foto_perfil']); ?>" alt="Foto de perfil">
-                <?php else: ?>
-                    <p>No se ha subido una foto de perfil.</p>
-                <?php endif; ?>
-            </div>
 
             <!-- Datos del usuario en una tarjeta a la derecha -->
             <div class="profile-card"> 
