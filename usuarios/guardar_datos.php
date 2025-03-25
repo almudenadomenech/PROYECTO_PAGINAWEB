@@ -20,6 +20,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = mysqli_real_escape_string($link, $_POST['email']);
     $foto_perfil = null; // Si no hay foto, no cambiarla
 
+    // Verificar que no haya campos vacíos
+    if (empty($usuario) || empty($apellidos) || empty($direccion) || empty($telefono) || empty($email)) {
+        echo "Todos los campos son requeridos.";
+        exit;
+    }
+
     // Verificar si el email está siendo actualizado y si ya existe en la base de datos
     if ($email) {
         $email_check_query = "SELECT id FROM usuarios WHERE email = '$email' AND id != '$user_id'";
