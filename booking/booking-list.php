@@ -16,7 +16,10 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-
+<!-- Encabezado -->
+<section class="heading-user-list" style="background:url(../images/user-list.jpg) no-repeat">
+    <h1>Lista de Usuarios Registrados</h1>
+</section>
 <?php
 
 
