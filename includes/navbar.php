@@ -47,8 +47,12 @@ $foto_default = "../images/usuario-default.png"; // Foto de perfil por defecto
                         <img src="' . $foto_mostrar . '" alt="Foto de perfil" style="width: 40px; height: 40px; border-radius: 50%; margin-left: 10px;">
                     </a>
                     <div class="dropdown-content" id="dropdown-menu">
-                        <a href="../usuarios/perfil.php">Mi perfil</a>
-                        <a href="../booking/booking-list.php">Mis reservas</a>';
+                        <a href="../usuarios/perfil.php">Mi perfil</a>';
+
+            // Mostrar "Mis reservas" solo si el usuario no es administrador
+            if ($_SESSION['role_id'] != 2) {
+                echo '<a href="../booking/booking-list.php">Mis reservas</a>';
+            }
 
             // Mostrar enlaces adicionales si el usuario es administrador
             if ($_SESSION['role_id'] == 2) {
