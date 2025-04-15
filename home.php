@@ -35,7 +35,7 @@ session_start();
             <div class="content">
                 <span>explorar, descubrir, viajar</span>
                 <h3>Viajes alrededor del mundo</h3>
-                <a href="paginas/paquetes.php" class="btn">Descubre más</a>
+                <a href="paquetes/paquetes.php" class="btn">Descubre más</a>
             </div>
 
         </div>
@@ -44,7 +44,7 @@ session_start();
             <div class="content">
                 <span>explorar, descubrir, viajar</span>
                 <h3>Descubre nuevos lugares</h3>
-                <a href="paginas/paquetes.php" class="btn">Descubre más</a>
+                <a href="paquetes/paquetes.php" class="btn">Descubre más</a>
             </div>
 
         </div>
@@ -53,7 +53,7 @@ session_start();
             <div class="content">
                 <span>explorar, descubrir, viajar</span>
                 <h3>Haz que tu viaje valga la pena</h3>
-                <a href="paginas/paquetes.php" class="btn">Descubre más</a>
+                <a href="paquetes/paquetes.php" class="btn">Descubre más</a>
             </div>
 
         </div>
@@ -144,7 +144,7 @@ session_start();
         <div class="content">
             <h3>Cultura y Tradición</h3>
             <p>Experiencia Auténtica. Visitas a mercados, museos y barrios históricos para conocer el alma de cada destino.</p>
-            <a href="booking/booking.php" class="btn">Reserva ahora</a>
+            
         </div>
         </div>
 
@@ -156,7 +156,7 @@ session_start();
         <div class="content">
             <h3>Playas de Ensuelo</h3>
             <p>Explora arrecifes, nada con delfines o prueba el surf en las mejores olas o Relájate en arenas blancas y aguas cristalinas con todo incluido.</p>
-            <a href="booking/booking.php" class="btn">Reserva ahora</a>
+           
         </div>
         </div>
 
@@ -168,14 +168,14 @@ session_start();
         <div class="content">
             <h3>Senderismo y Naturaleza</h3>
             <p>Explora rutas impresionantes, cascadas escondidas y paisajes de ensueño. Disfruta de cabañas acogedoras, chimeneas y vistas panorámicas.</p>
-            <a href="booking/booking.php" class="btn">Reserva ahora</a>
+           
         </div>
         </div>
 
     </div>
 
     <div class="load-more">
-        <a href="paginas/paquetes.php" class="btn">Leer más</a>
+        <a href="paquetes/paquetes.php" class="btn">Ver paquetes</a>
     </div>
 
 </section>

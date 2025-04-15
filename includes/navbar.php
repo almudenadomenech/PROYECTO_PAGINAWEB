@@ -32,7 +32,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
     <nav class="navbar">
         <a href="../home.php">Home</a>
         <a href="../paginas/acercaDe.php">Acerca de</a>
-        <a href="../paginas/paquetes.php">Paquetes</a>
+        <a href="../paquetes/paquetes.php">Paquetes</a>
         <a href="../booking/booking.php">Booking</a>
 
         <?php
@@ -42,7 +42,8 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
             $foto_mostrar = !empty($foto_perfil) ? $foto_perfil : $foto_default;
 
             echo '<div class="profile-dropdown">
-                    <a href="javascript:void(0)" class="profile-photo" onclick="toggleDropdown()">
+                   <a href="javascript:void(0)" class="profile-photo" onclick="toggleDropdown(event)">
+
                         <img src="' . $foto_mostrar . '" alt="Foto de perfil" style="width: 40px; height: 40px; border-radius: 50%; margin-left: 10px;">
                     </a>
                     <div class="dropdown-content" id="dropdown-menu">
