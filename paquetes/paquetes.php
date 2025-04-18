@@ -65,9 +65,12 @@ if (mysqli_num_rows($result) == 0) {
                 $image = !empty($paquete['image']) ? "../images/" . $paquete['image'] : "../images/viaje-default.jpg";
             ?>
                 <div class="box">
-                    <div class="image">
-                        <img src="<?= $image ?>" alt="<?= htmlspecialchars($paquete['location']) ?>">
-                    </div>
+                <div class="image">
+    <a href="paquetes-detail.php?id=<?= $paquete['id'] ?>">
+        <img src="<?= $image ?>" alt="<?= htmlspecialchars($paquete['location']) ?>">
+    </a>
+</div>
+
                     <div class="content">
                         <h3><?= htmlspecialchars($paquete['location']) ?></h3>
                         <p><?= htmlspecialchars($paquete['description']) ?></p>

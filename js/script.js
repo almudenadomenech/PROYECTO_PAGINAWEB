@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
         navbar.classList.remove('active');
     };
 
-    // Verifica si Swiper está cargado
+    // Swiper sliders generales
     if (typeof Swiper !== 'undefined') {
         new Swiper(".home-slider", {
             loop: true,
@@ -51,6 +51,21 @@ document.addEventListener('DOMContentLoaded', function () {
                 768: { slidesPerView: 2 },
                 1024: { slidesPerView: 3 },
             },
+        });
+
+        // 🆕 Swiper para la galería de detalle del paquete
+        new Swiper(".gallerySwiper", {
+            loop: true,
+            spaceBetween: 20,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            slidesPerView: 1,
         });
     }
 
