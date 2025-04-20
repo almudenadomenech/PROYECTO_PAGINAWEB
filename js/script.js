@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // 🆕 Swiper para la galería de detalle del paquete
         new Swiper(".gallerySwiper", {
             loop: true,
-            spaceBetween: 20,
+            spaceBetween: 2,
             navigation: {
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 el: ".swiper-pagination",
                 clickable: true,
             },
-            slidesPerView: 1,
+            slidesPerView: 2,
         });
     }
 
@@ -86,10 +86,14 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     const checkLoadMoreButton = () => {
-        if (currentItem >= boxes.length) {
-            loadMoreBtn.style.display = 'none';
+        if (loadMoreBtn) {
+            if (currentItem >= boxes.length) {
+                loadMoreBtn.style.display = 'none';
+            } else {
+                loadMoreBtn.style.display = 'inline-block';
+            }
         } else {
-            loadMoreBtn.style.display = 'inline-block';
+            console.warn('Botón "Cargar más" no encontrado.');
         }
     };
 

@@ -38,6 +38,33 @@ $duraciones = [];
 while ($row = mysqli_fetch_assoc($duraciones_result)) {
     $duraciones[] = $row;
 }
+
+// Manejar el envío de comentarios
+if (isset($_POST['send_comment'])) {
+    $rating = $_POST['rating'];
+    $comment = mysqli_real_escape_string($link, $_POST['comment']);
+    $user_id = $_SESSION['id']; // Obtener el ID del usuario logueado
+
+    // Consulta para insertar el comentario en la base de datos
+    $insert_comment_query = "INSERT INTO comentarios (package_id, user_id, rating, comment) VALUES (?, ?, ?, ?)";
+    
+    if ($stmt = mysqli_prepare($link, $insert_comment_query)) {
+        mysqli_stmt_bind_param($stmt, "iiis", $package_id, $user_id, $rating, $comment);
+        
+        // Ejecutar la consulta
+        if (mysqli_stmt_execute($stmt)) {
+            // Comentario insertado correctamente
+            header("Location: paquetes-detail.php?id=$package_id"); // Redirigir para evitar reenvío del formulario
+            exit;
+        } else {
+            $message = "Error al enviar el comentario. Por favor, intente de nuevo.";
+        }
+
+        mysqli_stmt_close($stmt);
+    } else {
+        $message = "Error al preparar la consulta.";
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -46,54 +73,74 @@ while ($row = mysqli_fetch_assoc($duraciones_result)) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalle del Paquete - <?php echo $package_data['nombre']; ?></title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
 <?php include('../includes/navbar.php'); ?>
 
-<div class="heading" style="background:url(../images/header-3.jpg) no-repeat">
+<div class="heading" style="background:url(../images/user-list.jpg) no-repeat">
     <h1><?php echo $package_data['location']; ?></h1>
 </div>
 
 <section class="package-details">
-    <div class="package-info">
-        <div class="image-detail">
-            <!-- Imagen Principal -->
-            <img src="../images/<?php echo $package_data['image']; ?>" alt="<?php echo $package_data['nombre']; ?>">
-        </div>
-
-        <!-- Carrusel de Miniaturas debajo de la Imagen Principal -->
-        <?php if ($gallery_result && mysqli_num_rows($gallery_result) > 0): ?>
-        <div class="swiper gallerySwiper" style="width: 100%; max-width: 800px; margin: 20px auto;">
-            <div class="swiper-wrapper">
-                <?php while ($img = mysqli_fetch_assoc($gallery_result)): ?>
-                <div class="swiper-slide">
-                    <img src="../images/<?php echo htmlspecialchars($img['ruta_imagen']); ?>" 
-                         alt="Imagen galería" 
-                         style="width: 100%; height: auto; border-radius: 10px;"
-                         onclick="openLightbox(this.src)">
-                </div>
-                <?php endwhile; ?>
-            </div>
-
-            <!-- Botones de Navegación -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-
-            <!-- Paginación opcional -->
-            <div class="swiper-pagination"></div>
-        </div>
-        <?php endif; ?>
-
-        <div class="content">
-            <h3><?php echo $package_data['nombre']; ?></h3>
-            <p><?php echo $package_data['description']; ?></p>
+<div class="package-info">
+    <div class="image-detail">
+        <!-- Imagen Principal -->
+        <div class="image-container">
+            <img src="../images/<?php echo $package_data['image']; ?>" alt="<?php echo $package_data['nombre']; ?>" class="main-image">
         </div>
     </div>
 
+    <!-- Duraciones -->
+    <div class="durations">
+        <h1>Paquetes vacacionales</h1>
+        <?php if (!empty($duraciones)) : ?>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Duración</th>
+                        <th>Precio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($duraciones as $duracion) : ?>
+                        <tr>
+                            <td><?php echo $duracion['duracion']; ?> días</td>
+                            <td><?php echo number_format($duracion['precio'], 2); ?>€</td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        <?php else : ?>
+            <p>No hay duraciones disponibles para este paquete.</p>
+        <?php endif; ?>
+    </div>
+</div>
+
+<!-- Galería de imágenes con Swiper -->
+<?php if ($gallery_result && mysqli_num_rows($gallery_result) > 0): ?>
+    <div class="gallery-wrapper">
+        <div class="swiper gallerySwiper">
+            <div class="swiper-wrapper">
+                <?php mysqli_data_seek($gallery_result, 0); // Por si ya se recorrió arriba ?>
+                <?php while ($img = mysqli_fetch_assoc($gallery_result)): ?>
+                    <div class="swiper-slide">
+                        <img src="../images/<?php echo htmlspecialchars($img['ruta_imagen']); ?>" 
+                             alt="Imagen galería" class="gallery-image"
+                             onclick="openLightbox(this.src)">
+                    </div>
+                <?php endwhile; ?>
+            </div>
+
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+<?php endif; ?>
 
     <!-- Servicios incluidos -->
     <?php
@@ -129,103 +176,82 @@ while ($row = mysqli_fetch_assoc($duraciones_result)) {
     }
     ?>
 
-    <?php if (!empty($incluidos)): ?>
-        <h1 style="margin-top: 30px;">Servicios Incluidos</h1>
-        <table class="tabla-incluidos" style="margin-top:10px; width:100%; text-align:center; border-collapse:collapse;">
-            <tr>
-                <?php foreach ($incluidos as $item): ?>
-                    <td style="padding:15px; border:1px solid #ddd; border-radius:10px;">
-                        <i class="fa-solid <?php echo $item['icon']; ?>" style="font-size:24px; color:#007bff;"></i><br>
-                        <strong><?php echo $item['label']; ?></strong><br>
-                        <span style="color:green;"><?php echo $item['texto']; ?></span>
-                    </td>
-                <?php endforeach; ?>
-                <?php
-                $emptyCells = 6 - count($incluidos);
-                for ($i = 0; $i < $emptyCells; $i++) {
-                    echo '<td style="padding:15px; border:1px solid transparent;"></td>';
-                }
-                ?>
-            </tr>
-        </table>
+<?php if (!empty($incluidos)): ?>
+    <h1 class="servicios-incluidos-title">Servicios Incluidos</h1>
+    <table class="tabla-incluidos">
+        <tr>
+            <?php foreach ($incluidos as $item): ?>
+                <td class="tabla-item">
+                    <i class="fa-solid <?php echo $item['icon']; ?> icon"></i><br>
+                    <strong ><?php echo $item['label']; ?></strong><br>
+                    
+                </td>
+            <?php endforeach; ?>
+            <?php
+            $emptyCells = 6 - count($incluidos);
+            for ($i = 0; $i < $emptyCells; $i++) {
+                echo '<td class="tabla-item"></td>';
+            }
+            ?>
+        </tr>
+    </table>
+<?php endif; ?>
+<!-- Valoración y Comentarios -->
+<p>Puntuación Promedio: <?php echo $avg_rating; ?> / 5</p>
+
+<section class="package-reviews">
+    <h2>Valoraciones de los Clientes</h2>
+
+    <!-- Si el usuario está logueado, mostramos el formulario para la valoración -->
+    <?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true): ?>
+    <div class="review-form-container">
+        <div class="review-form">
+            <h3>Deja tu valoración</h3>
+            <form action="paquetes-detail.php?id=<?php echo $package_id; ?>" method="post">
+                <label for="rating">Valoración (1-5 estrellas):</label>
+                <select name="rating" id="rating" required>
+                    <option value="1">1 Estrella</option>
+                    <option value="2">2 Estrellas</option>
+                    <option value="3">3 Estrellas</option>
+                    <option value="4">4 Estrellas</option>
+                    <option value="5">5 Estrellas</option>
+                </select>
+
+                <label for="comment">Comentario:</label>
+                <textarea name="comment" id="comment" required></textarea>
+
+                <button type="submit" name="send_comment" class="btn">Enviar Comentario</button>
+            </form>
+        </div>
+    </div>
     <?php endif; ?>
 
-    <!-- Duraciones -->
-    <div class="durations">
-        <h1>Paquetes vacacionales</h1>
-        <?php if (!empty($duraciones)) : ?>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Duración</th>
-                        <th>Precio</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach ($duraciones as $duracion) : ?>
-                        <tr>
-                            <td><?php echo $duracion['duracion']; ?> días</td>
-                            <td><?php echo number_format($duracion['precio'], 2); ?>€</td>
-                        </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
-        <?php else : ?>
-            <p>No hay duraciones disponibles para este paquete.</p>
-        <?php endif; ?>
-    </div>
-
-    <!-- Rating promedio -->
-    <p>Puntuación Promedio: <?php echo $avg_rating; ?> / 5</p>
-
-    <!-- Comentarios -->
-    <section class="package-reviews">
-        <h2>Valoraciones de los Clientes</h2>
-
-        <?php if (isset($message)): ?>
-            <div class="message"><?php echo $message; ?></div>
-        <?php endif; ?>
-
-        <div class="comments-container">
-            <?php while ($comment = mysqli_fetch_assoc($comments_result)): ?>
-                <?php $user_photo = $comment['foto_perfil'] ? "../images/{$comment['foto_perfil']}" : '../images/default.jpg'; ?>
-                <div class="comment">
-                    <div class="user-info">
-                        <img src="<?php echo $user_photo; ?>" alt="Foto de <?php echo $comment['usuario']; ?>" class="user-photo">
-                        <p><strong><?php echo $comment['usuario']; ?></strong></p>
-                    </div>
-                    <div class="comment-content">
-                        <div class="rating">
-                            <?php for ($i = 0; $i < $comment['rating']; $i++): ?>
-                                <span class="star">★</span>
-                            <?php endfor; ?>
-                            <?php for ($i = $comment['rating']; $i < 5; $i++): ?>
-                                <span class="star">☆</span>
-                            <?php endfor; ?>
-                        </div>
-                        <p><?php echo $comment['comment']; ?></p>
-                    </div>
+    <!-- Comentarios ya realizados -->
+    <div class="comments-container">
+        <?php while ($comment = mysqli_fetch_assoc($comments_result)): ?>
+            <?php $user_photo = $comment['foto_perfil'] ? "../images/{$comment['foto_perfil']}" : '../images/default.jpg'; ?>
+            <div class="comment">
+                <div class="user-info">
+                    <img src="<?php echo $user_photo; ?>" alt="Foto de <?php echo $comment['usuario']; ?>" class="user-photo">
+                    <p><strong><?php echo $comment['usuario']; ?></strong></p>
+                    <small><?php echo date("d/m/Y H:i", strtotime($comment['fecha'])); ?></small> 
                 </div>
-            <?php endwhile; ?>
-        </div>
+                <div class="comment-content">
+                    <div class="rating">
+                        <?php for ($i = 0; $i < $comment['rating']; $i++): ?>
+                            <span class="star">★</span>
+                        <?php endfor; ?>
+                        <?php for ($i = $comment['rating']; $i < 5; $i++): ?>
+                            <span class="star">☆</span>
+                        <?php endfor; ?>
+                    </div>
+                    <p><?php echo $comment['comment']; ?></p>
+                </div>
+            </div>
+        <?php endwhile; ?>
+    </div>
+</section>
 
-        <h3>Deja tu valoración</h3>
-        <form action="paquetes-detail.php?id=<?php echo $package_id; ?>" method="post" class="comment-form">
-            <label for="rating">Valoración (1-5 estrellas):</label>
-            <select name="rating" id="rating" required>
-                <option value="1">1 Estrella</option>
-                <option value="2">2 Estrellas</option>
-                <option value="3">3 Estrellas</option>
-                <option value="4">4 Estrellas</option>
-                <option value="5">5 Estrellas</option>
-            </select>
-
-            <label for="comment">Comentario:</label>
-            <textarea name="comment" id="comment" required></textarea>
-
-            <button type="submit" name="send_comment" class="btn">Enviar Comentario</button>
-        </form>
-    </section>
 </section>
 
 <!-- Lightbox -->
@@ -234,7 +260,7 @@ while ($row = mysqli_fetch_assoc($duraciones_result)) {
 </div>
 
 <?php include('../includes/footer.php'); ?>
-<script src="../js/script.js"></script>
+
 <script>
 function openLightbox(src) {
     const lightbox = document.getElementById('lightbox');

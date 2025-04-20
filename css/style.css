@@ -731,49 +731,6 @@ section {
 
 
 
-/* SECCION RESEÑA DE CLIENTES */
-
-.reviews {
-    background: var(--light-bg);
-}
-.reviews .slide {
-    padding: 2rem;
-    border: 1px solid #ccc;
-    background: var(--white);
-    text-align: center;
-    box-shadow: var(--box-shadow);
-    user-select: none;  /* Evita que se pueda seleccionar el texto */
-}
-.reviews .slide .stars {
-    padding-bottom: .5rem;
-}
-.reviews .slide .stars i {
-    font-size: 1.7rem;
-    color: var(--main-color);
-}
-.reviews .slide p {
-    font-size: 1.5rem;
-    color: var(--light-black);
-    line-height: 2;
-    padding: 1rem 0;
-}
-.reviews .slide h3 {
-    font-size: 2rem;
-    color: var(--black);
-}
-.reviews .slide span {
-    font-size: 1.5rem;
-    color: var(--main-color);
-    display: block;
-}
-.reviews .slide img {
-    height: 7rem;
-    width: 7rem;
-    border-radius: 50%;  /* Hace la imagen circular */
-    margin-top: 1rem;
-}
-
-
 
 /* ------------------PAQUETES---------------- */
 
@@ -962,25 +919,24 @@ section {
 .package-info {
     display: flex;
     flex-direction: row;  /* Imagen y texto en fila */
-    gap: 20px;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    gap: 10px;  /* Espacio entre los elementos */
+    padding: 10px 10px 5px 10px;  /* Ajustar el padding, reduciendo el margen inferior */
+    border-radius: none;
     width: 100%;
 }
 
+
 .image-detail {
-    flex: 0 0 40%;  /* Imagen ocupa el 40% */
+    flex: 0 0 65%;  /* Imagen ocupa el % */
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: auto;
+    align-items: auto;
 }
 
 .image-detail img {
     width: 100%;
     height: auto;
-    max-width: 350px;
+    max-width: 500px;
     border-radius: 10px;
 }
 
@@ -1043,7 +999,7 @@ section {
 }
 
 .extra-info i {
-    color: #007BFF;
+    color: var(--main-color);
     margin-right: 8px;
 }
 
@@ -1068,33 +1024,153 @@ section {
         width: 100%;  /* La información también ocupa todo el ancho */
     }
 }
+/* ------------------- PAQUETES VACACIONALES ------------------- */
+.durations {
+    width: 100%;
+    max-width: 900px;
+    margin-top: 5px;
+    padding: 0;
+    
+    border-radius: 10px;
+    
+    /* Mover el contenedor hacia la izquierda  y hacia arriba */
+    transform: translate(-120px, -60px);
+}
+
+.durations h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;  /* Usamos un tono gris oscuro */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.duraciones-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.duracion-item {
+    background-color: #f9f9f9; /* Gris claro para las tarjetas */
+    padding: 20px;
+    border-radius: 10px;
+    width: 48%; /* Ajusta el ancho de las tarjetas */
+    box-sizing: border-box;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.duracion-item:hover {
+    transform: translateY(-5px);
+}
+
+.duracion-info h3 {
+    font-size: 1.8rem;
+    color: var(--main-color); /* Mantener el color principal definido en el CSS */
+    margin-bottom: 10px;
+}
+
+.duracion-info .price {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: var(--main-color); /* Aquí utilizamos el color principal también */
+}
+
+.btn-select {
+    background-color: var(--main-color); /* Mantener el color principal */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 15px;
+}
+
+.btn-select:hover {
+    background-color: var(--main-color-dark); /* Un tono más oscuro del color principal */
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
+    .duracion-item {
+        width: 100%;
+    }
+
+    .durations {
+        padding: 15px;
+    }
+
+    .duraciones-container {
+        flex-direction: column;
+    }
+}
+
+
+
 /* ----------------------GALERÍA CON SWIPER Y LIGHTBOX-------------------------- */
 
-/* Contenedor para la galería, debe estar debajo de la imagen principal */
+
+/* Contenedor para la galería */
 .gallery-container {
     position: relative;
     width: 100%;
-    margin-top: 20px;  /* Aseguramos que quede debajo de la imagen principal */
+    margin-top: 10px;  /* Reducido el espacio entre la imagen principal y la galería */
 }
 
 /* Swiper para la galería */
 .gallerySwiper {
-    width: 100%;
-    max-width: 800px;  /* Limitar el ancho del carrusel */
-    margin: 20px auto;  /* Centramos el carrusel en la pantalla */
+    max-width: 300px;
+    margin: 2px 0 10px 10px; /* Reducido el margen superior para acercar más la galería */
+    position: relative;
+    height: 120px;
+    min-height: 120px;
 }
 
-/* Estilo de las miniaturas en el swiper */
+.gallery-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    margin-top: -20px;  /* Mueve la galería hacia arriba */
+}
+
+
+
+/* Imagen principal */
+
+
+.gallery-image {
+    width: 90%; /* Ajustamos el tamaño de la imagen principal */
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 0 auto; /* Centra la imagen */
+}
+
+/* Contenedor del slide */
 .gallerySwiper .swiper-slide {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+    padding: 0;
+    height: 120px;  /* Ajusta la altura para las miniaturas */
+    margin: 2px; /* Ajusta para tener márgenes más pequeños */
+    width: 100px;  /* Controlamos el ancho de cada miniatura */
+    margin-right: 2px;  /* Reducimos el margen entre las miniaturas */
 }
 
-.gallerySwiper .swiper-slide img.thumbnail {
-    width: 80px;  /* Tamaño de la miniatura */
-    height: 60px;  /* Tamaño de la miniatura */
-    object-fit: cover;  /* Aseguramos que las imágenes se ajusten */
+
+/* Estilo de las miniaturas en el swiper */
+.gallerySwiper .swiper-slide img {
+    width: 100%;  /* Ajustamos el tamaño de las miniaturas */
+    height: 80px; /* Ajustamos el tamaño de las miniaturas */
+    object-fit: cover;
     cursor: pointer;
     border: 2px solid transparent;
     border-radius: 5px;
@@ -1103,22 +1179,64 @@ section {
 
 /* Efecto hover para las miniaturas */
 .gallerySwiper .swiper-slide img.thumbnail:hover {
-    transform: scale(1.05);  /* Efecto de ampliación al pasar el ratón */
-    border-color: #007BFF;  /* Color del borde al pasar el ratón */
+    transform: scale(1.05);
+    border-color: #007BFF;
+}
+ /* Flechas de navegación */
+
+ 
+/* Estilo de los botones de navegación (flechas) */
+.gallery-wrapper .swiper-button-prev,
+.gallery-wrapper .swiper-button-next {
+    font-size: 18px; /* Tamaño del icono */
+    width: 40px; /* Ancho del botón */
+    height: 40px; /* Alto del botón */
+    color: var(--main-color); /* Cambia el color de las flechas */
+    background-color: rgba(255, 255, 255, 0.7); /* Fondo con opacidad */
+    border-radius: 50%; /* Botones redondeados */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Flechas de navegación Swiper */
-.gallery-container .swiper-button-prev,
-.gallery-container .swiper-button-next {
-    color: #007BFF;
-    top: 50%;  /* Centrado vertical */
-    transform: translateY(-50%);  /* Ajuste para centrar las flechas */
+/* Ajuste del tamaño del icono de la flecha */
+.gallery-wrapper .swiper-button-prev::after,
+.gallery-wrapper .swiper-button-next::after {
+    font-size: 18px; /* Ajusta el tamaño de la flecha */
+    transform: scale(1); /* Tamaño de la flecha sin redimensionarla */
 }
 
-/* Paginación de Swiper */
+/* Cambiar el color de las flechas al hacer hover */
+.gallery-wrapper .swiper-button-prev:hover,
+.gallery-wrapper .swiper-button-next:hover {
+    background-color: rgba(0, 123, 255, 0.2); /* Fondo más oscuro al hacer hover */
+    color:black; /* Color de las flechas al hacer hover */
+}
+
+
+ 
+
+
+/* Círculos de paginación */
 .gallery-container .swiper-pagination {
-    bottom: -10px;  /* Ajustamos la posición de la paginación */
     position: absolute;
+    bottom: -10px; /* Ajustamos un poco la posición de los círculos */
+    text-align: center;
+    width: 100%;
+    z-index: 11;
+}
+
+.gallery-container .swiper-pagination-bullet {
+    width: 6px;
+    height: 6px;
+    margin: 0 8px;
+    background-color: #007BFF;
+    opacity: 0.5;
+}
+
+.gallery-container .swiper-pagination-bullet-active {
+    opacity: 1;
+    background-color: #0056b3;
 }
 
 /* Lightbox */
@@ -1148,19 +1266,211 @@ section {
 @media (max-width: 600px) {
     /* Ajuste de las miniaturas en pantallas pequeñas */
     .gallerySwiper .swiper-slide img.thumbnail {
-        width: 60px;  /* Miniaturas más pequeñas */
-        height: 50px;  /* Miniaturas más pequeñas */
+        width: 60px;
+        height: 50px;
     }
 
     /* Ajuste de las flechas de navegación en pantallas pequeñas */
     .gallery-container .swiper-button-prev,
     .gallery-container .swiper-button-next {
-        top: 40%;  /* Ajuste de las flechas en pantallas pequeñas */
+        top: 40%;
     }
 }
+/* SERVICIOS INCLUIDOS */
+/* Estilo para el título de los servicios incluidos */
+.servicios-incluidos-title {
+    margin-top: 30px;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 25px;
+}
 
+/* Estilo para la tabla de servicios incluidos */
+.tabla-incluidos {
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse; /* Hace que los bordes no se dupliquen */
+}
 
+/* Estilo para cada celda de la tabla */
+.tabla-item {
+    padding: 15px;
+    border: none; /* Sin borde */
+    vertical-align: middle; /* Asegura que el contenido esté centrado */
+    margin-bottom: 25px;
+   
+}
 
+/* Estilo para el icono dentro de la celda */
+.tabla-item .icon {
+    font-size: 24px;
+    color: var(--main-color); /* Color para los iconos */
+    margin-bottom: 15px;
+}
+
+/* Estilo para el texto dentro de la celda */
+.tabla-item strong {
+    display: block; /* Asegura que el texto esté en una nueva línea */
+    font-size: 1.5rem;
+}
+
+/* COMENTARIOS */
+/* Estilos para el formulario de comentarios */
+.review-form-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.review-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.review-form h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+label {
+    font-size: 16px;
+    color: #555;
+}
+
+select, textarea {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+}
+
+select {
+    height: 40px;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+    max-height: 300px;
+}
+
+textarea:focus, select:focus {
+    outline: none;
+    border-color: #007BFF;
+}
+
+button {
+    padding: 12px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:active {
+    background-color: #004080;
+}
+
+/* Estilo para el mensaje de error o éxito */
+.message {
+    text-align: center;
+    padding: 15px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.message.error {
+    background-color: #ffcccc;
+    color: #cc0000;
+}
+
+.message.success {
+    background-color: #ccffcc;
+    color: #006600;
+}
+
+/* Estilo para los comentarios previos */
+.comments-container {
+    margin-top: 40px;
+}
+
+.comment {
+    display: flex;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.user-info {
+    margin-right: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user-info img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.comment-content {
+    flex: 1;
+}
+
+.comment-content .rating {
+    margin-bottom: 10px;
+}
+
+.star {
+    color: gold;
+    font-size: 18px;
+}
+
+.comment-content p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Para hacer que el formulario sea más responsivo */
+@media (max-width: 768px) {
+    .review-form-container {
+        width: 90%;
+    }
+    
+    .review-form h3 {
+        font-size: 22px;
+    }
+
+    select, textarea {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+}
 
 
 
