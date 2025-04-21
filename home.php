@@ -19,7 +19,9 @@ session_start();
 <body>
 
 <?php
-    include('includes/navbar.php');
+    
+    include_once('includes/navbar.php');
+    
 ?>
 
 <!-- seccion home apertura -->

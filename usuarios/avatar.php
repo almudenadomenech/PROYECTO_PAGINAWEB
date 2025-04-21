@@ -1,5 +1,6 @@
 <?php
 include('../includes/conexion.php'); // Conexión a la base de datos
+include('../includes/navbar.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['foto_perfil'])) {
     $foto_tmp = $_FILES['foto_perfil']['tmp_name'];
@@ -37,8 +38,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['foto_perfil'])) {
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+<div class="heading" style="background:url(../images/user-list.jpg) no-repeat">
+        <h1 style="font-size: 45px;">Formulario de Usuario</h1>
+    </div>
 <section class="booking">
-    <h1 class="heading-title">Subir Foto de Perfil</h1>
+   
 
     <form action="avatar.php" method="POST" enctype="multipart/form-data" class="booking-form">
         <div class="preview-container" style="text-align: center; margin-bottom: 1rem;">
@@ -85,5 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['foto_perfil'])) {
         }
     }
 </script>
+
+<?php include('../includes/footer.php'); ?>
 </body>
 </html>

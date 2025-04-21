@@ -7,7 +7,7 @@ include('../includes/conexion.php'); // Conexión a la base de datos
 // Verificar si el usuario está logueado y si es un administrador
 if (!isset($_SESSION['id']) || $_SESSION['role_id'] != 2) { // Cambié 'rol' por 'role_id' para ser consistente
     // Si no es un administrador, redirige a la página de inicio o acceso denegado
-    header('Location: ../index.php');
+    header('Location: ../home.php');
     exit();
 }
 
