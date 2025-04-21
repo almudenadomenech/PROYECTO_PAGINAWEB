@@ -7,7 +7,7 @@ include('../includes/conexion.php'); // Conexión a la base de datos
 // Verificar si el usuario está logueado y si es un administrador
 if (!isset($_SESSION['id']) || $_SESSION['role_id'] != 2) { // Cambié 'rol' por 'role_id' para ser consistente
     // Si no es un administrador, redirige a la página de inicio o acceso denegado
-    header('Location: ../home.php');
+    header('Location: ../index.php');
     exit();
 }
 
@@ -58,7 +58,7 @@ if (!$result) {
                 </div>
                 <h2><?= htmlspecialchars($user['usuario']); ?></h2>
                 <div class="acciones">
-                    <a href="detalles_usuario.php?id=<?= $user['id']; ?>" class="btn btn-detalles">Detalles</a>
+                    <a href="user-detail.php?id=<?= $user['id']; ?>" class="btn btn-detalles">Detalles</a>
                     <a href="eliminar_usuario.php?id=<?= $user['id']; ?>" class="btn btn-eliminar" onclick="return confirm('¿Estás seguro de eliminar este usuario?');">Eliminar</a>
                 </div>
             </div>
