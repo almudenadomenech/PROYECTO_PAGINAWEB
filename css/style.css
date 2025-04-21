@@ -938,9 +938,7 @@ section {
 
 
 /* ---CUADRO DE MENSAJE--- */
-
 /* Estilos para el modal */
-
 #modal-message {
     display: none; /* Por defecto, el modal está oculto */
     position: fixed;
@@ -967,7 +965,13 @@ section {
 #modal-message h2 {
     font-size: 24px; /* Aumentar el tamaño de la fuente del mensaje */
     margin-bottom: 40px; /* Aumenta el espacio entre el mensaje y el botón */
-   
+    color: white; /* Asegura que el texto del h2 sea blanco */
+}
+
+/* Estilo para el párrafo */
+#modal-message p {
+    font-size: 18px; /* Ajuste de tamaño de fuente para el párrafo */
+    color: white; /* Asegura que el texto del párrafo sea blanco */
 }
 
 /* Estilo del botón */

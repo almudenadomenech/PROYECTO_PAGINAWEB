@@ -92,5 +92,22 @@ window.onclick = function(event) {
     }
 };
 
-// ES UNA PRUEBA PARA SUBIR UN COMMINT
+
+
+window.addEventListener('load', function() {
+    // Obtener el valor del atributo 'data-success' del body
+    const successFlag = document.body.getAttribute('data-success');
+    
+    // Si la reserva fue exitosa, mostrar el modal
+    if (successFlag === 'true') {
+        document.getElementById('reservationModal').style.display = 'block';
+    }
+});
+
+// Función para cerrar el modal
+function closeModal() {
+    document.getElementById('reservationModal').style.display = 'none';
+}
+
+
 
