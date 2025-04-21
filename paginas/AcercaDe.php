@@ -59,7 +59,7 @@
 
 <!-- Seccion comentarios apertura -->
 
-<section class="reviews">
+<!-- <section class="reviews">
 
     <div class="swiper reviews-slider">
 
@@ -148,7 +148,7 @@
             </div>
         </div>
     </div>
-    </section>
+    </section> -->
 <!-- Seccion comentarios cierre -->
 
 

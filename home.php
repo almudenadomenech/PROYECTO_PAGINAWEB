@@ -9,12 +9,14 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
 
-    <!-- swiper css link -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <!-- swiper css link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
-     <!-- font awesone cdn link  -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-     <link rel="stylesheet" href="css/style.css">
+<!-- font awesone cdn link  -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="css/style.css">
+
+   
 </head>
 <body>
 
@@ -27,13 +29,13 @@ session_start();
 
  <div class="swiper home-slider">
 
-    <div class="swiper-wrapper">
+ <div class="swiper-wrapper">
 
         <div class="swiper-slide slide" style="background:url(images/home-slide-1.jpg) no-repeat">
             <div class="content">
                 <span>explorar, descubrir, viajar</span>
                 <h3>Viajes alrededor del mundo</h3>
-                <a href="paginas/paquetes.php" class="btn">Descubre más</a>
+                <a href="paquetes/paquetes.php" class="btn">Descubre más</a>
             </div>
 
         </div>
@@ -42,7 +44,7 @@ session_start();
             <div class="content">
                 <span>explorar, descubrir, viajar</span>
                 <h3>Descubre nuevos lugares</h3>
-                <a href="paginas/paquetes.php" class="btn">Descubre más</a>
+                <a href="paquetes/paquetes.php" class="btn">Descubre más</a>
             </div>
 
         </div>
@@ -51,7 +53,7 @@ session_start();
             <div class="content">
                 <span>explorar, descubrir, viajar</span>
                 <h3>Haz que tu viaje valga la pena</h3>
-                <a href="paginas/paquetes.php" class="btn">Descubre más</a>
+                <a href="paquetes/paquetes.php" class="btn">Descubre más</a>
             </div>
 
         </div>
@@ -142,7 +144,7 @@ session_start();
         <div class="content">
             <h3>Cultura y Tradición</h3>
             <p>Experiencia Auténtica. Visitas a mercados, museos y barrios históricos para conocer el alma de cada destino.</p>
-            <a href="booking/booking.php" class="btn">Reserva ahora</a>
+            
         </div>
         </div>
 
@@ -154,7 +156,7 @@ session_start();
         <div class="content">
             <h3>Playas de Ensuelo</h3>
             <p>Explora arrecifes, nada con delfines o prueba el surf en las mejores olas o Relájate en arenas blancas y aguas cristalinas con todo incluido.</p>
-            <a href="booking/booking.php" class="btn">Reserva ahora</a>
+           
         </div>
         </div>
 
@@ -166,14 +168,14 @@ session_start();
         <div class="content">
             <h3>Senderismo y Naturaleza</h3>
             <p>Explora rutas impresionantes, cascadas escondidas y paisajes de ensueño. Disfruta de cabañas acogedoras, chimeneas y vistas panorámicas.</p>
-            <a href="booking/booking.php" class="btn">Reserva ahora</a>
+           
         </div>
         </div>
 
     </div>
 
     <div class="load-more">
-        <a href="paginas/paquetes.php" class="btn">Leer más</a>
+        <a href="paquetes/paquetes.php" class="btn">Ver paquetes</a>
     </div>
 
 </section>
@@ -202,8 +204,11 @@ session_start();
 
 
 <!-- swiper js link  -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-     <script src="js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+
+<!-- Ahora, carga tu script personalizado después -->
+<script src="js/script.js" defer></script>
+
 </body>
 </html>

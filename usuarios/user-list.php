@@ -58,7 +58,7 @@ if (!$result) {
                 </div>
                 <h2><?= htmlspecialchars($user['usuario']); ?></h2>
                 <div class="acciones">
-                    <a href="detalles_usuario.php?id=<?= $user['id']; ?>" class="btn btn-detalles">Detalles</a>
+                    <a href="user-detail.php?id=<?= $user['id']; ?>" class="btn btn-detalles">Detalles</a>
                     <a href="eliminar_usuario.php?id=<?= $user['id']; ?>" class="btn btn-eliminar" onclick="return confirm('¿Estás seguro de eliminar este usuario?');">Eliminar</a>
                 </div>
             </div>

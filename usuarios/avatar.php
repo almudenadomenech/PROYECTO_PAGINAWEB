@@ -1,5 +1,9 @@
 <?php
 include('../includes/conexion.php'); // Conexión a la base de datos
+<<<<<<< HEAD
+include('../includes/navbar.php');
+=======
+>>>>>>> 55b7472a72b651f692e743d1dec3a255080f58c4
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['foto_perfil'])) {
     $foto_tmp = $_FILES['foto_perfil']['tmp_name'];
